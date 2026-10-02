@@ -188,8 +188,10 @@ section{padding-block:clamp(64px,9vw,104px)}
 .safety h2{font-size:clamp(1.8rem,3.6vw,2.6rem);text-align:center}
 .sf-row{list-style:none;padding:0;margin:clamp(28px,4vw,44px) 0 0;display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
 @media (max-width:900px){.sf-row{grid-template-columns:1fr 1fr}}
-@media (max-width:480px){.sf-row{grid-template-columns:1fr;gap:20px}}
-.sf-row li{border-top:2px solid var(--red);padding-top:14px;font-weight:700;font-size:1.08rem}
+@media (max-width:480px){.sf-row{grid-template-columns:1fr 1fr;gap:24px 12px}}
+.sf-row li{display:grid;justify-items:center;align-content:start;gap:12px;text-align:center;font-weight:700;font-size:1.05rem}
+.sf-ic{width:60px;height:60px;border-radius:50%;background:var(--red-soft);color:var(--red);display:grid;place-items:center}
+.sf-ic svg{width:28px;height:28px}
 .safe-row{list-style:none;padding:28px 0 0;margin:clamp(56px,7vw,80px) 0 0;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;justify-content:center;gap:14px 40px}
 .safe-row li{display:flex;align-items:center;gap:10px;font-weight:600;font-size:.98rem}
 .safe-row svg{width:22px;height:22px;color:var(--red);flex:none}
@@ -516,10 +518,10 @@ footer .store b{font-size:.92rem}
   <div class="wrap">
     <h2>Safe from pickup to drop-off.</h2>
     <ul class="sf-row">
-      <li>Verified motari</li>
-      <li>Know who's coming</li>
-      <li>Share your trip live</li>
-      <li>Help in the app</li>
+      <li><span class="sf-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg></span><span>Verified motari</span></li>
+      <li><span class="sf-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg></span><span>Know who's coming</span></li>
+      <li><span class="sf-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 21s7-7.2 7-12a7 7 0 0 0-14 0c0 4.8 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg></span><span>Share your trip live</span></li>
+      <li><span class="sf-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 6h16v10H8l-4 4z"/><path d="M12 9v3M12 14.5h.01"/></svg></span><span>Help in the app</span></li>
     </ul>
   </div>
 </section>
