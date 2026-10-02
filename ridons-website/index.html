@@ -184,25 +184,14 @@ section{padding-block:clamp(64px,9vw,104px)}
 .feats .feat h3{font-size:1.1rem}
 .feat .chk{width:30px;height:30px;color:var(--red)}
 .feat p{color:var(--muted);font-size:1rem;margin-top:4px}
-.safety{border-top:1px solid var(--line)}
-.sf-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(40px,7vw,96px);align-items:center}
-.sf-grid > *{min-width:0}
-@media (max-width:900px){.sf-grid{grid-template-columns:1fr}}
-.sf-copy h2{font-size:clamp(2rem,4.4vw,3.2rem);line-height:1.08}
-.sf-lead{margin-top:12px;color:var(--muted);font-size:1.12rem}
-.sf-points{list-style:none;padding:0;margin:28px 0 0;display:grid}
-.sf-points li{padding:16px 0;border-top:1px solid var(--line)}
-.sf-points li:last-child{border-bottom:1px solid var(--line)}
-.sf-points b{display:block;font-size:1.1rem}
-.sf-points span{color:var(--muted)}
-.sf-visual{display:grid;place-items:center}
-.sf-visual .phone{width:min(270px,72%);transform:rotate(3deg)}
-.sf-driver{display:flex;align-items:center;gap:8px;border:1px solid var(--phone-line);border-radius:10px;padding:8px}
-.sf-driver .av{width:28px;height:28px;border-radius:50%;color:#fff;display:grid;place-items:center;font-weight:700;font-size:10px;flex:none}
-.sf-driver .who{flex:1;min-width:0}
-.sf-driver b{display:block;font-size:10.5px}
-.sf-driver small{font-size:8.5px;color:var(--phone-muted)}
-.sf-badge{font-size:8px;font-weight:700;color:#157A41;background:#E7F5EC;padding:3px 7px;border-radius:999px}
+.safety{padding-top:clamp(24px,4vw,48px);padding-bottom:clamp(24px,4vw,48px)}
+.safety h2{font-size:clamp(1.8rem,3.6vw,2.6rem);text-align:center}
+.sf-row{list-style:none;padding:0;margin:clamp(28px,4vw,44px) 0 0;display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
+@media (max-width:900px){.sf-row{grid-template-columns:1fr 1fr}}
+@media (max-width:480px){.sf-row{grid-template-columns:1fr;gap:20px}}
+.sf-row li{border-top:2px solid var(--red);padding-top:14px;display:grid;gap:4px;align-content:start}
+.sf-row b{font-size:1.08rem}
+.sf-row span{color:var(--muted);font-size:.95rem}
 .safe-row{list-style:none;padding:28px 0 0;margin:clamp(56px,7vw,80px) 0 0;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;justify-content:center;gap:14px 40px}
 .safe-row li{display:flex;align-items:center;gap:10px;font-weight:600;font-size:.98rem}
 .safe-row svg{width:22px;height:22px;color:var(--red);flex:none}
@@ -249,6 +238,7 @@ section{padding-block:clamp(64px,9vw,104px)}
 .m-copy{display:grid;gap:18px;align-content:start}
 .m-copy .pill{justify-self:start}
 .m-ask{color:var(--fg)!important;font-weight:600;font-size:1.02rem!important}
+.m-btn{justify-self:start;margin-top:6px}
 .m-link{justify-self:start;font-weight:700;color:var(--red);text-decoration:none;border-bottom:2px solid currentColor;padding-bottom:2px}
 .m-link:hover{color:var(--red-hover)}
 .m-copy h2{font-size:clamp(2.3rem,5vw,3.7rem);line-height:1.04}
@@ -302,6 +292,13 @@ section{padding-block:clamp(64px,9vw,104px)}
 .c-visual .phone{position:relative;width:min(270px,70%);transform:rotate(-4deg)}
 .c-copy h2{font-size:clamp(2.1rem,4.6vw,3.4rem);line-height:1.08}
 .c-lead{margin-top:16px;color:#FFF4F4;font-size:1.15rem;max-width:40ch}
+.c-flow{list-style:none;padding:0;margin:30px 0 0;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;position:relative}
+.c-flow::before{content:"";position:absolute;top:21px;left:22px;right:calc(33.333% - 22px);height:2px;background:repeating-linear-gradient(90deg,rgba(255,255,255,.7) 0 6px,transparent 6px 12px)}
+.c-flow li{position:relative;display:grid;gap:4px;align-content:start}
+.c-n{width:44px;height:44px;border-radius:50%;background:#fff;color:var(--red);display:grid;place-items:center;font-weight:800;font-size:1.05rem;margin-bottom:8px;box-shadow:0 0 0 6px var(--red)}
+.c-flow b{font-size:1.15rem}
+.c-flow span:not(.c-n){color:#FFF4F4;font-size:.95rem;line-height:1.4}
+@media (max-width:560px){.c-flow{grid-template-columns:1fr;gap:18px}.c-flow::before{top:22px;bottom:22px;left:21px;right:auto;width:2px;height:auto;background:repeating-linear-gradient(180deg,rgba(255,255,255,.7) 0 6px,transparent 6px 12px)}.c-flow li{grid-template-columns:44px 1fr;column-gap:16px}.c-n{grid-row:span 2;margin:0}}
 .c-points{list-style:none;padding:0;margin:30px 0 0;display:grid}
 .c-points li{padding:16px 0;border-top:1px solid rgba(255,255,255,.28)}
 .c-points li:last-child{border-bottom:1px solid rgba(255,255,255,.28)}
@@ -327,7 +324,8 @@ section{padding-block:clamp(64px,9vw,104px)}
 .btn2{display:grid;grid-template-columns:1fr 1fr;gap:6px}
 
 /* join banner */
-.join{background:var(--bg);padding-top:clamp(24px,4vw,48px)}
+.join{background:var(--bg)}
+.join .wrap{border-top:1px solid var(--line);padding-top:clamp(48px,6vw,72px)}
 .join-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
 .join-grid > *{min-width:0}
 @media (max-width:900px){.join-grid{grid-template-columns:1fr}}
@@ -520,12 +518,12 @@ footer .store b{font-size:.92rem}
   <div class="wrap m-grid">
     <div class="m-copy">
       <h2>Ridons leaves <em>no one behind.</em></h2>
-      <p>Motari keep Kigali moving, but cash leaves no record. Every Ridons trip builds a motari's income history, the first step to savings, insurance and credit.</p>
+      <p>Motari keep Kigali moving, yet their payments rarely add up to anything a bank can use. Ridons turns every trip into a clear, organised earnings profile, the first step to savings, insurance and credit.</p>
       <p class="m-ask">Fair prices today. Financial inclusion tomorrow. Built in Kigali, for Rwanda.</p>
-      <a class="m-link" href="#partner">Build it with us <span aria-hidden="true">→</span></a>
+      <a class="btn btn-red m-btn" href="#partner">Partner with Ridons</a>
     </div>
 
-    <div class="m-visual" role="img" aria-label="Illustration of a motari's Ridons record: fair rides and an income record are live, savings and protection are being built, access to credit is next.">
+    <div class="m-visual" role="img" aria-label="A motari's Ridons record: fair rides and an earnings profile are live, savings and protection are being built, access to credit is next.">
       <span class="orb" aria-hidden="true"></span>
       <span class="orb small" aria-hidden="true"></span>
       <div class="record glass" aria-hidden="true">
@@ -533,12 +531,11 @@ footer .store b{font-size:.92rem}
         <div class="bars"><i style="height:22%"></i><i style="height:30%"></i><i style="height:26%"></i><i style="height:40%"></i><i style="height:48%"></i><i style="height:44%"></i><i style="height:60%"></i><i style="height:72%"></i><i style="height:86%"></i></div>
         <ul class="unlocks">
           <li class="on"><span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg></span>Fair rides<em>Live</em></li>
-          <li class="on"><span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg></span>Income record<em>Live</em></li>
+          <li class="on"><span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg></span>Earnings profile<em>Live</em></li>
           <li class="half"><span class="dot"></span>Savings &amp; protection<em>Building</em></li>
           <li><span class="dot"></span>Access to credit<em>Next</em></li>
         </ul>
       </div>
-      <p class="illus" style="position:absolute;bottom:-18px;left:0;right:0;color:#3F1218">Illustration</p>
     </div>
   </div>
 </section>
@@ -574,13 +571,26 @@ footer .store b{font-size:.92rem}
     <div class="c-copy">
       <h2>Your bike.<br>Your price.<br>Your business.</h2>
       <p class="c-lead">You know Kigali's streets better than anyone. On Ridons, you decide what every ride is worth.</p>
-      <ul class="c-points">
-        <li><b>You set the price</b><span>Accept, counter or skip. Always your call.</span></li>
-        <li><b>You get paid straight away</b><span>Cash in hand, or MoMo to your phone.</span></li>
-        <li><b>You grow with every trip</b><span>Your earnings build a record that opens doors.</span></li>
-      </ul>
-      <div class="c-cta"><a class="btn btn-white" href="#join">Earn with Ridons</a><span class="illus" style="margin:0;color:#FFF4F4">App screen is an illustration.</span></div>
+      <ol class="c-flow">
+        <li><span class="c-n">1</span><b>Set your price</b><span>Accept, counter or skip.</span></li>
+        <li><span class="c-n">2</span><b>Get paid</b><span>Cash or MoMo, straight away.</span></li>
+        <li><span class="c-n">3</span><b>Grow</b><span>Every trip builds your profile.</span></li>
+      </ol>
+      <div class="c-cta"><a class="btn btn-white" href="#join">Earn with Ridons</a></div>
     </div>
+  </div>
+</section>
+
+<!-- SAFETY -->
+<section id="safety" class="safety">
+  <div class="wrap">
+    <h2>Safe from pickup to drop-off.</h2>
+    <ul class="sf-row">
+      <li><b>Verified motari</b><span>ID, licence, bike papers and insurance checked.</span></li>
+      <li><b>Know who's coming</b><span>Name, photo, plate and rating before pickup.</span></li>
+      <li><b>Share your trip</b><span>Family and friends can follow along live.</span></li>
+      <li><b>Help in the app</b><span>Report anything. We review every trip.</span></li>
+    </ul>
   </div>
 </section>
 
@@ -601,39 +611,6 @@ footer .store b{font-size:.92rem}
       <li>Do a short training in Kinyarwanda</li>
       <li>Get your vest and go online</li>
     </ol>
-  </div>
-</section>
-
-<!-- SAFETY -->
-<section id="safety" class="safety">
-  <div class="wrap sf-grid">
-    <div class="sf-copy">
-      <h2>Safe from pickup to drop-off.</h2>
-      <p class="sf-lead">For passengers and motari alike.</p>
-      <ul class="sf-points">
-        <li><b>Verified motari</b><span>ID, licence, bike papers and insurance checked.</span></li>
-        <li><b>Know who's coming</b><span>Name, photo, plate and rating before pickup.</span></li>
-        <li><b>Share your trip</b><span>Family and friends can follow along live.</span></li>
-        <li><b>Help in the app</b><span>Report anything. We review every trip.</span></li>
-      </ul>
-    </div>
-    <div class="sf-visual" aria-hidden="true">
-      <div class="phone">
-        <div class="screen">
-          <div class="status"><span>9:41</span><span>●●●</span></div>
-          <div class="trip"><i></i>Nyarutarama <b>→</b> Remera Bus Park</div>
-          <div class="map"><svg><use href="#map"/></svg></div>
-          <div class="sheet">
-            <div class="sheet-row"><h4>Your motari is coming</h4><span class="hint">2 min</span></div>
-            <div class="line-red"></div>
-            <div class="sf-driver"><span class="av" style="background:#2F6FDE">JB</span><span class="who"><b>Jean Bosco</b><small>RF 482 C · ★ 4.9</small></span><span class="sf-badge">Verified</span></div>
-            <div class="btn2"><span class="p-btn ghost">Share trip</span><span class="p-btn ghost">Help</span></div>
-            <div class="stops"><span><svg><use href="#pin"/></svg>Nyarutarama</span><span><svg><use href="#pin"/></svg>Remera Bus Park</span></div>
-            <div class="tabbar"><span class="on"><svg><use href="#i-home"/></svg>Home</span><span><svg><use href="#i-act"/></svg>Activities</span><span><svg><use href="#i-acc"/></svg>Account</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
 </section>
 
