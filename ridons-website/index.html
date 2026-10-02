@@ -37,7 +37,7 @@
 .illus{font-size:.8rem;margin-top:10px;text-align:center}
 .store[aria-disabled="true"]{cursor:default}
 .store[aria-disabled="true"]:hover{background:#000}
-html{scroll-behavior:smooth;scroll-padding-top:76px}
+html{scroll-behavior:smooth;scroll-padding-top:110px}
 @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
 body{background:var(--bg);color:var(--fg);font-family:var(--font);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 a{color:inherit}
@@ -60,10 +60,10 @@ section{padding-block:clamp(64px,9vw,104px)}
 .btn-red{background:var(--red);color:#fff}
 .btn-red:hover{background:var(--red-hover)}
 .stores{display:flex;flex-wrap:wrap;gap:12px}
-.store{display:inline-flex;align-items:center;gap:10px;padding:8px 16px 8px 12px;border-radius:10px;border:1.5px solid #000;color:#fff;text-decoration:none;background:#000;min-width:150px}
+.store{display:inline-flex;align-items:center;gap:10px;padding:8px 16px 8px 12px;border-radius:10px;border:1.5px solid #000;color:#fff;text-decoration:none;background:#000;min-width:0;padding:11px 18px 11px 14px}
 .store:hover{background:#2A2A2A}
 .store svg{width:24px;height:24px;flex:none}
-.store span{display:grid;line-height:1.1}
+.store b{font-size:1.08rem;font-weight:700;line-height:1}
 .store small{font-size:.62rem;letter-spacing:.04em;text-transform:uppercase;opacity:.85}
 .store b{font-size:1.08rem;font-weight:600}
 
@@ -182,6 +182,15 @@ section{padding-block:clamp(64px,9vw,104px)}
 .feats .feat h3{font-size:1.1rem}
 .feat .chk{width:30px;height:30px;color:var(--red)}
 .feat p{color:var(--muted);font-size:1rem;margin-top:4px}
+.safety{padding-top:0}
+.s-grid{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(16px,2.4vw,28px)}
+@media (max-width:900px){.s-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.s-grid{grid-template-columns:1fr}}
+.s-grid li{background:var(--bg-2);border-radius:20px;padding:24px;display:grid;gap:8px;align-content:start}
+.s-ic{width:48px;height:48px;border-radius:14px;background:#fff;color:var(--red);display:grid;place-items:center;box-shadow:0 6px 16px -10px rgba(208,32,42,.5);margin-bottom:6px}
+.s-ic svg{width:24px;height:24px}
+.s-grid h3{font-size:1.08rem}
+.s-grid p{color:var(--muted);font-size:.95rem}
 .safe-row{list-style:none;padding:28px 0 0;margin:clamp(56px,7vw,80px) 0 0;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;justify-content:center;gap:14px 40px}
 .safe-row li{display:flex;align-items:center;gap:10px;font-weight:600;font-size:.98rem}
 .safe-row svg{width:22px;height:22px;color:var(--red);flex:none}
@@ -227,6 +236,10 @@ section{padding-block:clamp(64px,9vw,104px)}
 @media (max-width:900px){.m-grid{grid-template-columns:1fr}}
 .m-copy{display:grid;gap:18px;align-content:start}
 .m-copy .pill{justify-self:start}
+.m-kicker{font-size:.82rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--red)}
+.m-ask{color:var(--fg)!important;font-weight:600;font-size:1.02rem!important}
+.m-link{justify-self:start;font-weight:700;color:var(--red);text-decoration:none;border-bottom:2px solid currentColor;padding-bottom:2px}
+.m-link:hover{color:var(--red-hover)}
 .m-copy h2{font-size:clamp(2.3rem,5vw,3.7rem);line-height:1.04}
 .m-copy h2 em{font-style:normal;color:var(--red)}
 .m-copy > p{color:var(--muted);font-size:1.12rem;max-width:44ch}
@@ -386,6 +399,7 @@ footer .store b{font-size:.92rem}
     <a class="logo" href="#top" aria-label="Ridons home">Ridons</a>
     <nav class="nav" aria-label="Main">
       <a href="#how">How it works</a>
+      <a href="#safety">Safety</a>
       <a href="#drive">For captains</a>
       <a href="#mission">Our mission</a>
       <a href="#faq">FAQs</a>
@@ -400,6 +414,7 @@ footer .store b{font-size:.92rem}
   </div>
   <nav class="mnav" id="mnav" aria-label="Mobile" hidden>
     <a href="#how">How it works</a>
+    <a href="#safety">Safety</a>
     <a href="#drive">For captains</a>
     <a href="#mission">Our mission</a>
     <a href="#faq">FAQs</a>
@@ -415,8 +430,8 @@ footer .store b{font-size:.92rem}
       <h1>Set your price.<br><em>Hop on. Go.</em></h1>
       <p class="lead">Make an offer. A captain accepts. The price is locked.</p>
       <div class="stores" id="get-app">
-        <a class="store" href="#" data-store="android" aria-label="Get it on Google Play"><svg aria-hidden="true" focusable="false"><use href="#gp"/></svg><span><small>Get it on</small><b>Google Play</b></span></a>
-        <a class="store" href="#" data-store="ios" aria-label="Download on the App Store"><svg aria-hidden="true" focusable="false"><use href="#ap"/></svg><span><small>Download on the</small><b>App Store</b></span></a>
+        <a class="store" href="#" data-store="android" aria-label="Google Play"><svg aria-hidden="true" focusable="false"><use href="#gp"/></svg><b>Google Play</b></a>
+        <a class="store" href="#" data-store="ios" aria-label="App Store"><svg aria-hidden="true" focusable="false"><use href="#ap"/></svg><b>App Store</b></a>
       </div>
       <p class="hero-note"><span class="live-dot" aria-hidden="true"></span>Now live in Kigali · Cash or MoMo</p>
     </div>
@@ -484,11 +499,22 @@ footer .store b{font-size:.92rem}
       </div>
     </div>
 
-    <ul class="safe-row" aria-label="Safety on every ride">
-      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg>Verified captains</li>
-      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg>See who's coming</li>
-      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 21s7-7.2 7-12a7 7 0 0 0-14 0c0 4.8 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>Share your trip</li>
-      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"/></svg>Ratings both ways</li>
+  </div>
+</section>
+
+
+<!-- SAFETY -->
+<section id="safety" class="safety">
+  <div class="wrap">
+    <div class="how-head center">
+      <h2>Safe on every ride.</h2>
+      <p class="sub">For passengers and captains alike.</p>
+    </div>
+    <ul class="s-grid">
+        <li><span class="s-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg></span><h3>Verified captains</h3><p>ID, licence, bike papers and insurance checked. Trained before the first trip.</p></li>
+        <li><span class="s-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg></span><h3>Know who's coming</h3><p>Name, photo, plate and rating before pickup.</p></li>
+        <li><span class="s-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 21s7-7.2 7-12a7 7 0 0 0-14 0c0 4.8 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg></span><h3>Share your trip</h3><p>Send your live trip to family or friends.</p></li>
+        <li><span class="s-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 6h16v10H8l-4 4z"/><path d="M12 9v3M12 14.5h.01"/></svg></span><h3>Help when you need it</h3><p>Report anything in the app. We review the trip record.</p></li>
     </ul>
   </div>
 </section>
@@ -497,8 +523,11 @@ footer .store b{font-size:.92rem}
 <section id="mission" class="mission">
   <div class="wrap m-grid">
     <div class="m-copy">
+      <span class="m-kicker">For partners and investors</span>
       <h2>Ridons leaves <em>no one behind.</em></h2>
-      <p>Cash rides leave no trace. Every Ridons ride builds a captain's financial future.</p>
+      <p>Moto captains keep Kigali moving, but cash leaves no record. Every Ridons trip builds a captain's income history, the first step to savings, insurance and credit.</p>
+      <p class="m-ask">We're building this with partners who share the mission.</p>
+      <a class="m-link" href="#partner">Partner with us <span aria-hidden="true">→</span></a>
     </div>
 
     <div class="m-visual" role="img" aria-label="Illustration of a captain's Ridons record: fair rides and an income record are live, savings and protection are being built, access to credit is next.">
@@ -555,7 +584,7 @@ footer .store b{font-size:.92rem}
         <li><b>You get paid straight away</b><span>Cash in hand, or MoMo to your phone.</span></li>
         <li><b>You grow with every trip</b><span>Your earnings build a record that opens doors.</span></li>
       </ul>
-      <div class="c-cta"><a class="btn btn-white" href="#join">Become a captain</a><span class="illus" style="margin:0;color:#FFF4F4">App screen is an illustration.</span></div>
+      <div class="c-cta"><a class="btn btn-white" href="#join">Earn with Ridons</a><span class="illus" style="margin:0;color:#FFF4F4">App screen is an illustration.</span></div>
     </div>
   </div>
 </section>
@@ -567,8 +596,8 @@ footer .store b{font-size:.92rem}
       <h2>Become a Ridons captain.</h2>
       <p class="lead">Got a moto? Sign up in minutes and start earning.</p>
       <div class="stores">
-        <a class="store" href="#" data-store="android" aria-label="Get it on Google Play"><svg aria-hidden="true" focusable="false"><use href="#gp"/></svg><span><small>Get it on</small><b>Google Play</b></span></a>
-        <a class="store" href="#" data-store="ios" aria-label="Download on the App Store"><svg aria-hidden="true" focusable="false"><use href="#ap"/></svg><span><small>Download on the</small><b>App Store</b></span></a>
+        <a class="store" href="#" data-store="android" aria-label="Google Play"><svg aria-hidden="true" focusable="false"><use href="#gp"/></svg><b>Google Play</b></a>
+        <a class="store" href="#" data-store="ios" aria-label="App Store"><svg aria-hidden="true" focusable="false"><use href="#ap"/></svg><b>App Store</b></a>
       </div>
     </div>
     <ol class="join-steps">
@@ -607,7 +636,7 @@ footer .store b{font-size:.92rem}
 <footer>
   <div class="glow" aria-hidden="true"><span class="blob" style="width:340px;height:340px;background:#FF7A5C;top:-60px;left:12%;opacity:.5"></span><span class="blob" style="width:300px;height:300px;background:#6A0814;top:20px;right:8%;opacity:.5"></span></div>
   <div class="wrap">
-    <div class="partner glass-red">
+    <div class="partner glass-red" id="partner">
       <div>
         <h3>We're early. Build it with us.</h3>
         <p>For funders and partners.</p>
@@ -630,8 +659,8 @@ footer .store b{font-size:.92rem}
         </div>
       </div>
       <div class="stores">
-        <a class="store" href="#" data-store="android" aria-label="Get it on Google Play"><svg aria-hidden="true" focusable="false"><use href="#gp"/></svg><span><small>Get it on</small><b>Google Play</b></span></a>
-        <a class="store" href="#" data-store="ios" aria-label="Download on the App Store"><svg aria-hidden="true" focusable="false"><use href="#ap"/></svg><span><small>Download on the</small><b>App Store</b></span></a>
+        <a class="store" href="#" data-store="android" aria-label="Google Play"><svg aria-hidden="true" focusable="false"><use href="#gp"/></svg><b>Google Play</b></a>
+        <a class="store" href="#" data-store="ios" aria-label="App Store"><svg aria-hidden="true" focusable="false"><use href="#ap"/></svg><b>App Store</b></a>
       </div>
     </div>
     <div class="f-base">
@@ -659,7 +688,6 @@ fetch('business.json').then(r => r.ok ? r.json() : null).then(biz => {
     if (!url) return;
     a.href = url; a.target = '_blank'; a.rel = 'noopener';
     a.removeAttribute('aria-disabled'); a.removeAttribute('role');
-    a.setAttribute('aria-label', (a.dataset.store === 'ios' ? 'Download on the App Store' : 'Get it on Google Play'));
   });
   document.querySelectorAll('[data-biz]').forEach(el => { const v = biz[el.dataset.biz]; if (v) el.textContent = v; });
   document.querySelectorAll('[data-biz-line]').forEach(el => { el.hidden = !biz[el.dataset.bizLine]; });
