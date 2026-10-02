@@ -1,0 +1,24 @@
+{
+  "_note": "Edit this one file to update company details, store links and social profiles across every page. Leave a value empty to hide it.",
+  "trading_name": "Ridons",
+  "legal_name": "",
+  "rdb_number": "",
+  "tin": "",
+  "address": "Kigali, Rwanda",
+  "phone": "",
+  "email": "contact@ridons.com",
+  "privacy_email": "contact@ridons.com",
+  "partnerships_email": "contact@ridons.com",
+  "store_links": {
+    "android": "",
+    "ios": ""
+  },
+  "social": {
+    "facebook": "",
+    "x": "",
+    "instagram": "",
+    "linkedin": "",
+    "tiktok": ""
+  },
+  "website": "https://ridons.com"
+}
