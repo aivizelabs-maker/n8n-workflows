@@ -1,6 +1,6 @@
 <meta charset="utf-8">
 <title>Ridons</title>
-<meta name="description" content="Now live in Kigali. Agree the price before you ride, pick your captain, and pay by cash or MoMo. Moto rides in Kimihurura, Remera and Nyarutarama.">
+<meta name="description" content="Now live in Kigali. Agree the price before you ride, pick your motari, and pay by cash or MoMo. Moto rides in Kimihurura, Remera and Nyarutarama.">
 <meta property="og:title" content="Ridons">
 <meta property="og:description" content="Now live in Kigali. Agree the price before you ride. Cash or MoMo.">
 <meta property="og:type" content="website">
@@ -14,9 +14,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800&family=Caveat:wght@600;700&display=swap">
 <style>
-/* Layout: follows the Figma draft. Bold Ridons-red hero, captain band and footer; white sections between.
+/* Layout: follows the Figma draft. Bold Ridons-red hero, motari band and footer; white sections between.
    One look on every device (no dark variant), on purpose. Hero with app screens, "how it works" built around
-   a phone you can actually use, a captain section, the join steps, then FAQs and the footer. */
+   a phone you can actually use, a motari section, the join steps, then FAQs and the footer. */
 :root{
   --red:#D0202A; --red-hover:#B51A23; --red-soft:#FDEDEE; --red-line:#F6CDD0;
   --navy:#0E1A2E; --navy-2:#16243C; --navy-line:#26354F; --on-navy:#FFFFFF; --on-navy-muted:#AEB8CA;
@@ -227,7 +227,7 @@ section{padding-block:clamp(64px,9vw,104px)}
 .blob{position:absolute;border-radius:50%;filter:blur(60px);pointer-events:none;z-index:0}
 .glow{position:absolute;inset:0;overflow:hidden;border-radius:inherit;pointer-events:none;z-index:0}
 
-/* mission: white melts into red at the bottom and runs straight into the captain band */
+/* mission: white melts into red at the bottom and runs straight into the motari band */
 .mission{position:relative;overflow:hidden;padding-top:clamp(24px,4vw,48px);padding-bottom:clamp(150px,16vw,220px);
   background:linear-gradient(180deg,var(--bg) 0%,var(--bg) 58%,#FCE4E5 74%,#F2A6AA 88%,var(--red) 100%)}
 .mission .wrap{position:relative;z-index:1}
@@ -278,8 +278,8 @@ section{padding-block:clamp(64px,9vw,104px)}
 .partner-cta small{color:#FFF4F4;font-size:.85rem}
 .partner-cta small b{color:#fff;user-select:all}
 
-/* navy captain band */
-/* captains band: calm and simple. Red, one phone, three plain statements. */
+/* navy motari band */
+/* motari band: calm and simple. Red, one phone, three plain statements. */
 .navy{position:relative;overflow-x:clip;color:#fff;background:var(--red);padding-top:clamp(20px,3vw,40px);padding-bottom:clamp(140px,15vw,190px)}
 .navy::after{content:"";position:absolute;left:-5%;right:-5%;bottom:-1px;height:clamp(60px,8vw,110px);background:var(--bg);z-index:1;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 120' preserveAspectRatio='none'%3E%3Cpath d='M0 0 C 300 20 500 110 820 90 C 1100 72 1300 30 1440 50 L1440 120 L0 120 Z'/%3E%3C/svg%3E") center/100% 100% no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 120' preserveAspectRatio='none'%3E%3Cpath d='M0 0 C 300 20 500 110 820 90 C 1100 72 1300 30 1440 50 L1440 120 L0 120 Z'/%3E%3C/svg%3E") center/100% 100% no-repeat}
 .navy .wrap{position:relative;z-index:1}
@@ -400,7 +400,7 @@ footer .store b{font-size:.92rem}
     <nav class="nav" aria-label="Main">
       <a href="#how">How it works</a>
       <a href="#safety">Safety</a>
-      <a href="#drive">For captains</a>
+      <a href="#drive">For motari</a>
       <a href="#mission">Our mission</a>
       <a href="#faq">FAQs</a>
     </nav>
@@ -415,7 +415,7 @@ footer .store b{font-size:.92rem}
   <nav class="mnav" id="mnav" aria-label="Mobile" hidden>
     <a href="#how">How it works</a>
     <a href="#safety">Safety</a>
-    <a href="#drive">For captains</a>
+    <a href="#drive">For motari</a>
     <a href="#mission">Our mission</a>
     <a href="#faq">FAQs</a>
     <a class="btn btn-red" href="#get-app">Get the app</a>
@@ -428,7 +428,7 @@ footer .store b{font-size:.92rem}
   <div class="wrap hero-grid">
     <div>
       <h1>Set your price.<br><em>Hop on. Go.</em></h1>
-      <p class="lead">Make an offer. A captain accepts. The price is locked.</p>
+      <p class="lead">Make an offer. A motari accepts. The price is locked.</p>
       <div class="stores" id="get-app">
         <a class="store" href="#" data-store="android" aria-label="Google Play"><svg aria-hidden="true" focusable="false"><use href="#gp"/></svg><b>Google Play</b></a>
         <a class="store" href="#" data-store="ios" aria-label="App Store"><svg aria-hidden="true" focusable="false"><use href="#ap"/></svg><b>App Store</b></a>
@@ -482,8 +482,8 @@ footer .store b{font-size:.92rem}
     <div class="how-grid">
       <ol class="steps" id="steps">
         <li data-step="1" aria-current="step"><span class="n">1</span><div><h3>Set your price</h3><p>We suggest a fair one. Keep it or change it.</p></div></li>
-        <li data-step="2"><span class="n">2</span><div><h3>Get offers</h3><p>Captains nearby accept or counter.</p></div></li>
-        <li data-step="3"><span class="n">3</span><div><h3>Pick your captain</h3><p>See name, photo and rating first.</p></div></li>
+        <li data-step="2"><span class="n">2</span><div><h3>Get offers</h3><p>Motari nearby accept or counter.</p></div></li>
+        <li data-step="3"><span class="n">3</span><div><h3>Pick your motari</h3><p>See name, photo and rating first.</p></div></li>
         <li data-step="4"><span class="n">4</span><div><h3>Ride and pay</h3><p>They come to you. Pay cash or MoMo, exactly what you agreed.</p></div></li>
       </ol>
 
@@ -508,10 +508,10 @@ footer .store b{font-size:.92rem}
   <div class="wrap">
     <div class="how-head center">
       <h2>Safe on every ride.</h2>
-      <p class="sub">For passengers and captains alike.</p>
+      <p class="sub">For passengers and motari alike.</p>
     </div>
     <ul class="s-grid">
-        <li><span class="s-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg></span><h3>Verified captains</h3><p>ID, licence, bike papers and insurance checked. Trained before the first trip.</p></li>
+        <li><span class="s-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg></span><h3>Verified motari</h3><p>ID, licence, bike papers and insurance checked. Trained before the first trip.</p></li>
         <li><span class="s-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg></span><h3>Know who's coming</h3><p>Name, photo, plate and rating before pickup.</p></li>
         <li><span class="s-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 21s7-7.2 7-12a7 7 0 0 0-14 0c0 4.8 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg></span><h3>Share your trip</h3><p>Send your live trip to family or friends.</p></li>
         <li><span class="s-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 6h16v10H8l-4 4z"/><path d="M12 9v3M12 14.5h.01"/></svg></span><h3>Help when you need it</h3><p>Report anything in the app. We review the trip record.</p></li>
@@ -519,18 +519,18 @@ footer .store b{font-size:.92rem}
   </div>
 </section>
 
-<!-- MISSION: why we exist, written for captains, passengers and funders alike -->
+<!-- MISSION: why we exist, written for motari, passengers and funders alike -->
 <section id="mission" class="mission">
   <div class="wrap m-grid">
     <div class="m-copy">
       <span class="m-kicker">For partners and investors</span>
       <h2>Ridons leaves <em>no one behind.</em></h2>
-      <p>Moto captains keep Kigali moving, but cash leaves no record. Every Ridons trip builds a captain's income history, the first step to savings, insurance and credit.</p>
+      <p>Motari keep Kigali moving, but cash leaves no record. Every Ridons trip builds a motari's income history, the first step to savings, insurance and credit.</p>
       <p class="m-ask">We're building this with partners who share the mission.</p>
       <a class="m-link" href="#partner">Partner with us <span aria-hidden="true">→</span></a>
     </div>
 
-    <div class="m-visual" role="img" aria-label="Illustration of a captain's Ridons record: fair rides and an income record are live, savings and protection are being built, access to credit is next.">
+    <div class="m-visual" role="img" aria-label="Illustration of a motari's Ridons record: fair rides and an income record are live, savings and protection are being built, access to credit is next.">
       <span class="orb" aria-hidden="true"></span>
       <span class="orb small" aria-hidden="true"></span>
       <div class="record glass" aria-hidden="true">
@@ -548,7 +548,7 @@ footer .store b{font-size:.92rem}
   </div>
 </section>
 
-<!-- CAPTAINS -->
+<!-- MOTARI -->
 <section id="drive" class="navy">
   <div class="wrap earn">
     <div class="c-visual">
@@ -593,7 +593,7 @@ footer .store b{font-size:.92rem}
 <section class="join" id="join">
   <div class="wrap join-grid">
     <div>
-      <h2>Become a Ridons captain.</h2>
+      <h2>Become a Ridons motari.</h2>
       <p class="lead">Got a moto? Sign up in minutes and start earning.</p>
       <div class="stores">
         <a class="store" href="#" data-store="android" aria-label="Google Play"><svg aria-hidden="true" focusable="false"><use href="#gp"/></svg><b>Google Play</b></a>
@@ -619,12 +619,12 @@ footer .store b{font-size:.92rem}
       <details><summary>Do I have to bargain every time?</summary><div class="a">No. Tap Confirm to use the suggested price.</div></details>
       <details><summary>Can I pay with cash?</summary><div class="a">Yes. Cash or MTN MoMo. You pay what you agreed.</div></details>
       <details><summary>Where does Ridons work?</summary><div class="a">Live in Kigali: Kimihurura, Remera and Nyarutarama, with more areas coming.</div></details>
-      <details><summary>Is it faster than walking to the stage?</summary><div class="a">Often. Your captain comes to you.</div></details>
-      <details><summary>How much does the captain keep?</summary><div class="a">Most of it. Ridons takes a small fee on finished trips.</div></details>
-      <details class="extra" hidden><summary>What if the captain asks for more?</summary><div class="a">Don't pay it. The agreed price is final. Report it in the app.</div></details>
-      <details class="extra" hidden><summary>Can I choose my captain?</summary><div class="a">Yes. You see every offer and pick one.</div></details>
-      <details class="extra" hidden><summary>I'm a captain. Can I skip a trip?</summary><div class="a">Anytime. Accept, counter or skip.</div></details>
-      <details class="extra" hidden><summary>I left something behind.</summary><div class="a">Tell us in the app or email us. We'll contact your captain.</div></details>
+      <details><summary>Is it faster than walking to the stage?</summary><div class="a">Often. Your motari comes to you.</div></details>
+      <details><summary>How much does the motari keep?</summary><div class="a">Most of it. Ridons takes a small fee on finished trips.</div></details>
+      <details class="extra" hidden><summary>What if the motari asks for more?</summary><div class="a">Don't pay it. The agreed price is final. Report it in the app.</div></details>
+      <details class="extra" hidden><summary>Can I choose my motari?</summary><div class="a">Yes. You see every offer and pick one.</div></details>
+      <details class="extra" hidden><summary>I'm a motari. Can I skip a trip?</summary><div class="a">Anytime. Accept, counter or skip.</div></details>
+      <details class="extra" hidden><summary>I left something behind.</summary><div class="a">Tell us in the app or email us. We'll contact your motari.</div></details>
       <details class="extra" hidden><summary>Is my data safe?</summary><div class="a">We keep only what we need and never sell it. See our <a href="privacy.html" style="color:var(--red);font-weight:600">Privacy Policy</a>.</div></details>
     </div>
     <button class="more" type="button" id="more">More questions</button>
@@ -715,10 +715,10 @@ document.getElementById('more').addEventListener('click', e => {
   e.currentTarget.hidden = true;
 });
 
-/* Demo phone: set a price, get offers, pick a captain */
+/* Demo phone: set a price, get offers, pick a motari */
 const sheet = document.getElementById('demo-sheet');
 const fmt = n => n.toLocaleString('en-US');
-const CAPTAINS = [
+const MOTARI = [
   { name: 'Jean Bosco', init: 'JB', color: '#2F6FDE', rating: '4.9', plate: 'RF 482 C', eta: 2 },
   { name: 'Eric N.', init: 'EN', color: '#C9822B', rating: '4.8', plate: 'RAD 123 B', eta: 1 },
   { name: 'Claudine U.', init: 'CU', color: '#7C5CBF', rating: '5.0', plate: 'RC 907 A', eta: 3 }
@@ -762,14 +762,14 @@ function stepOffers(){
   setStep(2);
   sheet.innerHTML = `
     <div class="sheet-row"><h4>Offers for you</h4><span class="hint">You offered ${fmt(price)}</span></div>
-    <span class="hint">Tap the captain you want</span>
+    <span class="hint">Tap the motari you want</span>
     <div class="line-red"></div>
     <div class="offers" id="d-offers"></div>
     <button type="button" class="p-btn ghost" id="d-back">Change my price</button>
     ${tabbar}`;
   document.getElementById('d-back').onclick = stepPrice;
   const box = document.getElementById('d-offers');
-  CAPTAINS.forEach((r, i) => setTimeout(() => {
+  MOTARI.forEach((r, i) => setTimeout(() => {
     if (!box.isConnected) return;
     const amt = replyFrom(i), ok = amt === price;
     const b = document.createElement('button');
@@ -777,7 +777,7 @@ function stepOffers(){
     b.innerHTML = `<span class="av" style="background:${r.color}">${r.init}</span><span class="who"><b>${r.name}</b><small>★ ${r.rating} · ${r.eta} min away</small></span><span class="amt num">${fmt(amt)}<small class="${ok ? '' : 'ctr'}">${ok ? 'Accepted' : 'Counter-offer'}</small></span>`;
     b.onclick = () => stepDone(r, amt);
     box.appendChild(b);
-    if (i === CAPTAINS.length - 1) setStep(3);
+    if (i === MOTARI.length - 1) setStep(3);
   }, 400 + i * 500));
 }
 
