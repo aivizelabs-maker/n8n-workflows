@@ -1,5 +1,8 @@
 <title>Ridons</title>
-<meta name="description" content="Set your price, pick your rider, ride. Moto rides in Kigali with no haggling and no drama. Cash or MoMo.">
+<meta name="description" content="Moto rides in Kigali where you agree the price before you ride. Pick your rider, pay by cash or MoMo. Starting in Kimihurura, Remera and Nyarutarama.">
+<meta property="og:title" content="Ridons">
+<meta property="og:description" content="Agree the price before you ride. Moto rides in Kigali, paid by cash or MoMo.">
+<meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800&family=Caveat:wght@600;700&display=swap">
@@ -11,7 +14,7 @@
   --red:#D0202A; --red-hover:#B51A23; --red-soft:#FDEDEE; --red-line:#F6CDD0;
   --navy:#0E1A2E; --navy-2:#16243C; --navy-line:#26354F; --on-navy:#FFFFFF; --on-navy-muted:#AEB8CA;
   --bg:#FFFFFF; --bg-2:#F6F7FA; --fg:#111827; --muted:#5B6474; --line:#E6E8EE;
-  --ok:#1F9D55;
+  --ok:#157A41;
   --phone-bg:#FFFFFF; --phone-fg:#111827; --phone-muted:#6B7280; --phone-line:#ECEDF1; --phone-2:#F6F7FA;
   --map:#EEF1F4; --map-road:#FFFFFF; --map-park:#E2EBDD;
   --shadow:0 30px 60px -28px rgba(14,26,46,.45);
@@ -22,6 +25,11 @@
 
 *{box-sizing:border-box}
 [hidden]{display:none!important}
+.skip{position:absolute;left:12px;top:-60px;z-index:100;background:var(--fg);color:#fff;padding:10px 16px;border-radius:999px;font-weight:700;text-decoration:none}
+.skip:focus{top:12px}
+.illus{font-size:.8rem;margin-top:10px;text-align:center}
+.store[aria-disabled="true"]{cursor:default}
+.store[aria-disabled="true"]:hover{background:#000}
 html{scroll-behavior:smooth;scroll-padding-top:76px}
 @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
 body{background:var(--bg);color:var(--fg);font-family:var(--font);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
@@ -71,23 +79,23 @@ section{padding-block:clamp(64px,9vw,104px)}
 
 /* hero */
 .hero{position:relative;color:#fff;padding-block:clamp(52px,7vw,92px) clamp(110px,13vw,160px);overflow:hidden;
-  background:radial-gradient(90% 120% at 85% 0%, #E8323C 0%, var(--red) 45%, #B0141D 100%)}
+  background:radial-gradient(90% 120% at 85% 0%, #D92630 0%, #C81D27 45%, #A9121B 100%)}
 .hero::after{content:"";position:absolute;left:-5%;right:-5%;bottom:-1px;height:clamp(60px,8vw,110px);background:var(--bg);
   -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 120' preserveAspectRatio='none'%3E%3Cpath d='M0 40 C 360 140 720 140 1000 70 C 1200 20 1340 10 1440 0 L1440 120 L0 120 Z'/%3E%3C/svg%3E") center/100% 100% no-repeat;
           mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 120' preserveAspectRatio='none'%3E%3Cpath d='M0 40 C 360 140 720 140 1000 70 C 1200 20 1340 10 1440 0 L1440 120 L0 120 Z'/%3E%3C/svg%3E") center/100% 100% no-repeat}
 .hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center}
 .hero-grid > *{min-width:0}
 @media (max-width:900px){.hero-grid{grid-template-columns:1fr}}
-.hero p.lead{margin-top:18px;font-size:1.15rem;color:#FFE3E4;max-width:44ch}
+.hero p.lead{margin-top:18px;font-size:1.15rem;color:#FFF4F4;max-width:44ch}
 .hero h1 em{font-style:normal;color:#FFD2D4}
 .hero .stores{margin-top:30px}
 .hero-facts{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px;padding:0;list-style:none}
-.hero-facts li{font-size:.85rem;font-weight:600;padding:6px 12px;border-radius:999px;background:var(--glass);color:#fff;border:1px solid var(--glass-line);-webkit-backdrop-filter:var(--glass-blur);backdrop-filter:var(--glass-blur)}
-.agreed{position:absolute;z-index:4;left:-70px;bottom:40px;background:linear-gradient(140deg,rgba(90,8,18,.55),rgba(60,4,12,.35))!important;display:flex;align-items:center;gap:12px;padding:12px 16px;border-radius:16px;color:#fff}
+.hero-facts li{font-size:.85rem;font-weight:600;padding:6px 12px;border-radius:999px;background:rgba(90,4,12,.38);color:#fff;border:1px solid var(--glass-line);-webkit-backdrop-filter:var(--glass-blur);backdrop-filter:var(--glass-blur)}
+.agreed{position:absolute;z-index:4;left:-70px;bottom:40px;background:linear-gradient(140deg,rgba(90,8,18,.86),rgba(60,4,12,.78))!important;display:flex;align-items:center;gap:12px;padding:12px 16px;border-radius:16px;color:#fff}
 .agreed .t{width:34px;height:34px;border-radius:50%;background:#fff;color:var(--ok);display:grid;place-items:center;flex:none}
 .agreed .t svg{width:18px;height:18px}
 .agreed b{display:block;font-size:1rem;line-height:1.2}
-.agreed small{font-size:.8rem;color:#FFE3E4}
+.agreed small{font-size:.8rem;color:#FFF4F4}
 @media (max-width:900px){.agreed{left:50%;right:auto;bottom:-14px;transform:translateX(-50%);white-space:nowrap}}
 .hero-phones{position:relative;height:460px}
 .hero-phones .phone{position:absolute;width:220px}
@@ -137,7 +145,7 @@ section{padding-block:clamp(64px,9vw,104px)}
 .offer .who small{color:var(--phone-muted);font-size:8px}
 .offer .amt{font-weight:800;font-size:11px;text-align:right;white-space:nowrap}
 .offer .amt small{display:block;font-weight:600;font-size:7.5px;color:var(--ok)}
-.offer .amt small.ctr{color:#B26A00}
+.offer .amt small.ctr{color:#9A5B00}
 @keyframes slide{from{opacity:0;transform:translateY(6px)}}
 .done{display:grid;justify-items:center;gap:6px;text-align:center;padding:4px 0}
 .done .tick{width:34px;height:34px;border-radius:50%;background:var(--ok);color:#fff;display:grid;place-items:center}
@@ -173,14 +181,14 @@ section{padding-block:clamp(64px,9vw,104px)}
 /* glass: frosted panes. They only sit on colour (red sections, glows), never on plain white. */
 :root{--glass:rgba(255,255,255,.14);--glass-line:rgba(255,255,255,.32);--glass-blur:blur(22px) saturate(180%)}
 .glass{
-  background:linear-gradient(140deg,rgba(255,255,255,.30) 0%,rgba(255,255,255,.10) 45%,rgba(255,255,255,.05) 100%);
+  background:linear-gradient(140deg,rgba(255,255,255,.20) 0%,rgba(255,255,255,0) 38%),rgba(110,6,16,.26);
   border:1px solid rgba(255,255,255,.34);
   -webkit-backdrop-filter:var(--glass-blur);backdrop-filter:var(--glass-blur);
   box-shadow:inset 0 1px 0 rgba(255,255,255,.6),inset 1px 0 0 rgba(255,255,255,.18),inset 0 -12px 24px -18px rgba(255,255,255,.35),0 30px 60px -30px rgba(90,6,16,.6);
 }
 /* tinted glass: stays readable when it crosses onto white */
 .glass-red{
-  background:linear-gradient(140deg,rgba(236,62,72,.78) 0%,rgba(208,32,42,.62) 50%,rgba(150,14,24,.70) 100%);
+  background:linear-gradient(140deg,rgba(200,28,38,.92) 0%,rgba(184,22,32,.86) 50%,rgba(150,14,24,.90) 100%);
   border:1px solid rgba(255,255,255,.38);
   -webkit-backdrop-filter:var(--glass-blur);backdrop-filter:var(--glass-blur);
   box-shadow:inset 0 1px 0 rgba(255,255,255,.55),inset 0 -14px 28px -20px rgba(255,255,255,.35),0 34px 70px -30px rgba(120,8,20,.65);
@@ -213,15 +221,15 @@ section{padding-block:clamp(64px,9vw,104px)}
   box-shadow:0 40px 90px -30px rgba(208,32,42,.6)}
 .orb.small{width:150px;top:0;right:4%;background:radial-gradient(circle at 35% 30%,#FFC9B8,#FF6A5C 60%,#D0202A);filter:blur(1px);box-shadow:none}
 .record{position:relative;z-index:1;width:min(370px,100%);border-radius:26px;padding:22px;display:grid;gap:16px;color:#fff}
-.record.glass{background:linear-gradient(140deg,rgba(255,140,140,.42) 0%,rgba(222,40,52,.34) 50%,rgba(140,12,22,.40) 100%)}
+.record.glass{background:linear-gradient(140deg,rgba(255,255,255,.18) 0%,rgba(255,255,255,0) 40%),rgba(130,8,18,.76)}
 @media (max-width:900px){.orb{width:min(420px,112%)}}
 .rec-head{display:flex;align-items:center;gap:12px}
 .rec-head .av{width:40px;height:40px;border-radius:50%;background:#fff;color:var(--red);display:grid;place-items:center;font-weight:800;font-size:.9rem;flex:none}
 .rec-head b{display:block;font-size:1.02rem}
-.rec-head small{color:#FFE3E4;font-size:.82rem}
+.rec-head small{color:#FFF4F4;font-size:.82rem}
 .bars{display:flex;align-items:flex-end;gap:7px;height:96px;padding:12px 12px 0;border-radius:16px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2)}
 .bars i{flex:1;border-radius:6px 6px 0 0;background:linear-gradient(180deg,#fff,rgba(255,255,255,.55))}
-.rec-cap{font-size:.8rem;color:#FFE3E4;margin-top:-8px}
+.rec-cap{font-size:.8rem;color:#FFF4F4;margin-top:-8px}
 .unlocks{list-style:none;padding:0;margin:0;display:grid;gap:8px}
 .unlocks li{display:flex;align-items:center;gap:10px;font-size:.95rem;font-weight:600;padding:9px 12px;border-radius:12px;background:rgba(255,255,255,.1)}
 .unlocks .dot{width:20px;height:20px;border-radius:50%;flex:none;display:grid;place-items:center;border:2px solid rgba(255,255,255,.7)}
@@ -234,17 +242,17 @@ section{padding-block:clamp(64px,9vw,104px)}
 .partner{position:relative;z-index:2;margin:0 auto;transform:translateY(-50%);max-width:880px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px;border-radius:24px;padding:clamp(22px,3.5vw,34px)}
 .partner > div{min-width:0;flex:1 1 320px}
 .partner h3{font-size:clamp(1.3rem,2.4vw,1.7rem);font-weight:800;letter-spacing:-.02em;color:#fff}
-.partner p{color:#FFE3E4;margin-top:6px;font-size:.98rem}
+.partner p{color:#FFF4F4;margin-top:6px;font-size:.98rem}
 .partner-cta{display:grid;gap:8px;justify-items:start;flex:0 1 auto}
 .partner-cta .btn{background:#fff;color:var(--red)}
-.partner-cta .btn:hover{background:#FFE3E4}
-.partner-cta small{color:#FFE3E4;font-size:.85rem}
+.partner-cta .btn:hover{background:#FFF4F4}
+.partner-cta small{color:#FFF4F4;font-size:.85rem}
 .partner-cta small b{color:#fff;user-select:all}
 
 /* navy rider band */
 /* riders band: playful and organic. Morphing blob, bobbing stickers, a road that winds through it. */
 .navy{position:relative;overflow-x:clip;color:#fff;padding-top:clamp(20px,3vw,40px);padding-bottom:clamp(140px,15vw,190px);
-  background:radial-gradient(70% 60% at 20% 30%,#E8323C 0%,transparent 70%),radial-gradient(60% 60% at 85% 70%,#B0141D 0%,transparent 70%),var(--red)}
+  background:radial-gradient(70% 60% at 20% 30%,#D42530 0%,transparent 70%),radial-gradient(60% 60% at 85% 70%,#B0141D 0%,transparent 70%),var(--red)}
 .navy::after{content:"";position:absolute;left:-5%;right:-5%;bottom:-1px;height:clamp(60px,8vw,110px);background:var(--bg);z-index:1;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 120' preserveAspectRatio='none'%3E%3Cpath d='M0 0 C 300 20 500 110 820 90 C 1100 72 1300 30 1440 50 L1440 120 L0 120 Z'/%3E%3C/svg%3E") center/100% 100% no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 120' preserveAspectRatio='none'%3E%3Cpath d='M0 0 C 300 20 500 110 820 90 C 1100 72 1300 30 1440 50 L1440 120 L0 120 Z'/%3E%3C/svg%3E") center/100% 100% no-repeat}
 .navy .wrap{position:relative;z-index:1}
 .navy .pill{background:rgba(255,255,255,.16);color:#fff;border-color:rgba(255,255,255,.4)}
@@ -270,7 +278,7 @@ section{padding-block:clamp(64px,9vw,104px)}
 @media (max-width:560px){.sticker{font-size:.78rem;max-width:132px;padding:8px 11px}.s1{left:-2%;top:12%}.s2{right:-3%}.s3{left:0;bottom:4%}.note{display:none}}
 .squig{position:relative;white-space:nowrap;display:inline-block}
 .squig svg{position:absolute;left:-2%;bottom:-.18em;width:104%;height:.38em;overflow:visible}
-.r-lead{margin-top:16px;color:#FFE3E4;font-size:1.12rem;max-width:40ch}
+.r-lead{margin-top:16px;color:#FFF4F4;font-size:1.12rem;max-width:40ch}
 .pebbles{list-style:none;padding:0;margin:28px 0 0;display:grid;gap:14px}
 .pebble{display:grid;grid-template-columns:54px 1fr;gap:14px;align-items:center;padding:16px 20px 16px 16px;border-radius:30px 46px 34px 48px / 46px 30px 48px 34px;transition:transform .3s ease}
 .pebble:nth-child(1){transform:rotate(-1.2deg)}
@@ -280,10 +288,10 @@ section{padding-block:clamp(64px,9vw,104px)}
 .pebble .ic{width:54px;height:54px;background:#fff;color:var(--red);display:grid;place-items:center;border-radius:46% 54% 42% 58% / 55% 45% 55% 45%}
 .pebble .ic svg{width:26px;height:26px}
 .pebble h3{color:#fff;font-size:1.08rem}
-.pebble p{color:#FFE3E4;font-size:.93rem;margin-top:2px;line-height:1.45}
+.pebble p{color:#FFF4F4;font-size:.93rem;margin-top:2px;line-height:1.45}
 .r-cta{margin-top:28px;display:flex;flex-wrap:wrap;gap:16px;align-items:center}
 .btn-white{background:#fff;color:var(--red)}
-.btn-white:hover{background:#FFE3E4}
+.btn-white:hover{background:#FFF4F4}
 .r-cta span{font-family:'Caveat',cursive;font-size:1.45rem;font-weight:700;color:#fff;transform:rotate(-3deg)}
 .earn-card{background:linear-gradient(135deg,#1F1F1F,#3A3A3A);color:#fff;border-radius:12px;padding:9px 10px;display:grid;gap:6px}
 .earn-card .r1{display:flex;justify-content:space-between;align-items:center;font-size:9px;opacity:.9}
@@ -330,7 +338,7 @@ section{padding-block:clamp(64px,9vw,104px)}
 .contact b{color:var(--fg);user-select:all;white-space:nowrap}
 
 /* footer */
-footer{position:relative;overflow-x:clip;background:radial-gradient(120% 140% at 50% 0%,#E8323C 0%,var(--red) 40%,#A3121B 100%);color:#FFE3E4;padding-block:0 28px;font-size:.88rem;margin-top:clamp(90px,10vw,120px);border-radius:clamp(36px,6vw,80px) clamp(36px,6vw,80px) 0 0}
+footer{position:relative;overflow-x:clip;background:radial-gradient(120% 140% at 50% 0%,#C41C26 0%,#B5161F 60%,#A3121B 100%);color:#FFFFFF;padding-block:0 28px;font-size:.88rem;margin-top:clamp(90px,10vw,120px);border-radius:clamp(36px,6vw,80px) clamp(36px,6vw,80px) 0 0}
 footer .wrap{position:relative;z-index:1}
 .f-top{margin-top:calc(-1 * clamp(40px,5vw,60px))}
 .f-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:20px;padding-bottom:26px;border-bottom:1px solid rgba(255,255,255,.3)}
@@ -343,7 +351,9 @@ footer .logo{font-size:1.5rem;color:#fff}
 footer .store{background:#000;padding:6px 12px 6px 10px;min-width:0;border-width:1px}
 footer .store b{font-size:.92rem}
 .f-base{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;padding-top:20px}
-.f-base nav{display:flex;flex-wrap:wrap;gap:20px}
+.f-base nav{display:flex;flex-wrap:wrap;gap:20px;align-self:flex-start}
+.biz{display:grid;gap:4px}
+.f-base a{color:#fff;text-decoration:underline;text-underline-offset:3px}
 .f-base a{text-decoration:none}
 .f-base a:hover{color:#fff;text-decoration:underline}
 </style>
@@ -373,11 +383,13 @@ footer .store b{font-size:.92rem}
     <symbol id="i-act" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M8 3v4M16 3v4M8 12h8M8 16h5"/></g></symbol>
     <symbol id="i-acc" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="10" r="3"/><path d="M6.5 18.5c1.5-2 3.3-3 5.5-3s4 1 5.5 3"/></g></symbol>
     <symbol id="i-earn" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="6" width="18" height="13" rx="2"/><circle cx="12" cy="12.5" r="2.5"/></g></symbol>
+    <symbol id="i-dl" viewBox="0 0 24 24"><path fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 3v12M7 10l5 5 5-5M5 21h14"/></symbol>
     <symbol id="gp" viewBox="0 0 24 24"><path fill="#FFFFFF" d="M3.6 2.3 13.4 12 3.6 21.7c-.4-.2-.6-.6-.6-1.1V3.4c0-.5.2-.9.6-1.1zm13.2 6.3-3.4 3.4 3.4 3.4 3.8-2.2c.8-.5.8-1.7 0-2.2zM3.6 2.3c.3-.2.8-.2 1.2 0l12 6.3-3.4 3.4zm9.8 9.7 3.4 3.4-12 6.3c-.4.2-.9.2-1.2 0z"/></symbol>
     <symbol id="ap" viewBox="0 0 24 24"><path fill="#FFFFFF" d="M16.4 12.6c0-2.6 2.1-3.8 2.2-3.9-1.2-1.8-3.1-2-3.7-2-1.6-.2-3.1.9-3.9.9-.8 0-2-.9-3.4-.9-1.7 0-3.3 1-4.2 2.6-1.8 3.1-.5 7.7 1.3 10.2.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8s2 .8 3.4.8 2.2-1.3 3.1-2.5c1-1.4 1.4-2.8 1.4-2.9 0 0-2.7-1-2.7-4.1zM13.9 5c.7-.9 1.2-2.1 1.1-3.3-1 0-2.3.7-3 1.6-.7.8-1.2 2-1.1 3.2 1.2.1 2.3-.6 3-1.5z"/></symbol>
   </defs>
 </svg>
 
+<a class="skip" href="#main">Skip to content</a>
 <header class="top">
   <div class="wrap">
     <a class="logo" href="#top" aria-label="Ridons home">Ridons</a>
@@ -389,7 +401,7 @@ footer .store b{font-size:.92rem}
     </nav>
     <div class="top-right">
       <a class="btn btn-red" href="#get-app">Get the app</a>
-      <button class="lang" type="button" id="lang" aria-label="Language: English">
+      <button class="lang" type="button" id="lang" aria-label="Language: English. Kinyarwanda coming soon.">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 3.8 5.5 3.8 9s-1.3 6.5-3.8 9c-2.5-2.5-3.8-5.5-3.8-9S9.5 5.5 12 3z"/></svg><span>En</span>
       </button>
       <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mnav">Menu</button>
@@ -404,7 +416,7 @@ footer .store b{font-size:.92rem}
   </nav>
 </header>
 
-<main>
+<main id="main">
 <!-- HERO -->
 <section class="hero" id="top">
   <div class="wrap hero-grid">
@@ -412,11 +424,11 @@ footer .store b{font-size:.92rem}
       <h1>Set your price.<br><em>Hop on. Go.</em></h1>
       <p class="lead">Drop your offer, a rider accepts or counters, and you're off. The price is locked before the engine starts, so there's no haggling at the stage and no drama at drop-off.</p>
       <div class="stores" id="get-app">
-        <a class="store" href="#" data-store="android" aria-label="Get it on Google Play"><svg aria-hidden="true"><use href="#gp"/></svg><span><small>Get it on</small><b>Google Play</b></span></a>
-        <a class="store" href="#" data-store="ios" aria-label="Download on the App Store"><svg aria-hidden="true"><use href="#ap"/></svg><span><small>Download on the</small><b>App Store</b></span></a>
+        <a class="store" href="#" data-store="android" aria-label="Google Play: coming soon"><svg aria-hidden="true" focusable="false"><use href="#i-dl"/></svg><span><small>Coming soon to</small><b>Google Play</b></span></a>
+        <a class="store" href="#" data-store="ios" aria-label="App Store: coming soon"><svg aria-hidden="true" focusable="false"><use href="#i-dl"/></svg><span><small>Coming soon to the</small><b>App Store</b></span></a>
       </div>
       <ul class="hero-facts">
-        <li>Live in Kigali</li>
+        <li>Starting in Kigali</li>
         <li>Cash or MoMo</li>
         <li>Kinyarwanda &amp; English</li>
       </ul>
@@ -462,7 +474,6 @@ footer .store b{font-size:.92rem}
 <section id="how">
   <div class="wrap">
     <div class="how-head center">
-      <span class="pill">Zero drama</span>
       <h2>Stage bargaining, upgraded.</h2>
       <p class="sub">Drop an offer. Riders reply. Pick your favourite. Go. Try it right here.</p>
     </div>
@@ -485,16 +496,16 @@ footer .store b{font-size:.92rem}
       </div>
 
       <div class="feats">
-        <div class="feat"><svg class="chk" aria-hidden="true"><use href="#chk"/></svg><div><h3>Fast pickups</h3><p>Agree on a price and your rider's already on the way. No walking to the stage, no waiting around.</p></div></div>
+        <div class="feat"><svg class="chk" aria-hidden="true"><use href="#chk"/></svg><div><h3>Pickup comes to you</h3><p>Agree on a price and your rider heads your way. No walk to the stage.</p></div></div>
         <div class="feat"><svg class="chk" aria-hidden="true"><use href="#chk"/></svg><div><h3>Cash or MoMo</h3><p>Pay however you like. The price you agreed is the price you pay. Done.</p></div></div>
       </div>
     </div>
 
-    <div class="safe" aria-label="Safety">
+    <div class="safe" role="group" aria-label="Safety on every ride">
       <div><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2.2"/><path d="M14 10h4M14 14h4M6 16c.6-1.2 1.7-2 3-2s2.4.8 3 2"/></svg></span><h3>Verified riders</h3><p>We check every rider's ID, bike papers and insurance, and train them before their first trip.</p></div>
       <div><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg></span><h3>See who's coming</h3><p>Name, photo, plate and rating, all before pickup.</p></div>
       <div><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s7-7.2 7-12a7 7 0 0 0-14 0c0 4.8 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg></span><h3>Share your ride</h3><p>Send your live trip to your people on WhatsApp so they can follow along.</p></div>
-      <div><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"/></svg></span><h3>Rate each other</h3><p>Passengers and riders rate each other. Good vibes on both sides get matched first.</p></div>
+      <div><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"/></svg></span><h3>Rate each other</h3><p>Passengers and riders rate each other. Respectful riders and passengers get matched first.</p></div>
     </div>
   </div>
 </section>
@@ -503,7 +514,6 @@ footer .store b{font-size:.92rem}
 <section id="mission" class="mission">
   <div class="wrap m-grid">
     <div class="m-copy">
-      <span class="pill">Why we exist</span>
       <h2>Ridons leaves <em>no one behind.</em></h2>
       <p>Cash rides leave no trace. Ridons gives every rider a record they own, and a way into the financial world.</p>
       <ul class="m-values">
@@ -513,7 +523,7 @@ footer .store b{font-size:.92rem}
       </ul>
     </div>
 
-    <div class="m-visual" aria-label="A rider's Ridons record: fair rides and income record are live, savings and protection are being built, access to credit is next.">
+    <div class="m-visual" role="img" aria-label="Illustration of a rider's Ridons record: fair rides and an income record from day one, savings and protection are being built, access to credit is next.">
       <span class="orb" aria-hidden="true"></span>
       <span class="orb small" aria-hidden="true"></span>
       <div class="record glass" aria-hidden="true">
@@ -521,12 +531,13 @@ footer .store b{font-size:.92rem}
         <div class="bars"><i style="height:22%"></i><i style="height:30%"></i><i style="height:26%"></i><i style="height:40%"></i><i style="height:48%"></i><i style="height:44%"></i><i style="height:60%"></i><i style="height:72%"></i><i style="height:86%"></i></div>
         <span class="rec-cap">Earnings, week by week</span>
         <ul class="unlocks">
-          <li class="on"><span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg></span>Fair rides<em>Live</em></li>
-          <li class="on"><span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg></span>Income record<em>Live</em></li>
+          <li class="on"><span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg></span>Fair rides<em>Day one</em></li>
+          <li class="on"><span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg></span>Income record<em>Day one</em></li>
           <li class="half"><span class="dot"></span>Savings &amp; protection<em>Building</em></li>
           <li><span class="dot"></span>Access to credit<em>Next</em></li>
         </ul>
       </div>
+      <p class="illus" style="position:absolute;bottom:-18px;left:0;right:0;color:#3F1218;opacity:1">Illustration. Names and figures are examples.</p>
     </div>
   </div>
 </section>
@@ -574,14 +585,14 @@ footer .store b{font-size:.92rem}
     </div>
 
     <div>
-      <span class="pill">For riders</span>
-      <h2 style="margin-top:14px">Earn more.<br>Keep <span class="squig">your price.<svg viewBox="0 0 200 16" preserveAspectRatio="none" aria-hidden="true"><path d="M2 10 C 20 2, 36 16, 54 9 S 88 2, 106 10 S 140 16, 158 8 S 186 4, 198 9" fill="none" stroke="#FFD2D4" stroke-width="4" stroke-linecap="round"/></svg></span></h2>
+      <h2>Earn more.<br>Keep <span class="squig">your price.<svg viewBox="0 0 200 16" preserveAspectRatio="none" aria-hidden="true"><path d="M2 10 C 20 2, 36 16, 54 9 S 88 2, 106 10 S 140 16, 158 8 S 186 4, 198 9" fill="none" stroke="#FFD2D4" stroke-width="4" stroke-linecap="round"/></svg></span></h2>
       <p class="r-lead">Kigali runs on riders. Ridons runs for them.</p>
       <ul class="pebbles">
-        <li class="pebble glass"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0L3 13V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg></span><div><h3>You call the price</h3><p>You know the streets. Accept or counter. No algorithm bossing you around.</p></div></li>
+        <li class="pebble glass"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0L3 13V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg></span><div><h3>You call the price</h3><p>You know the streets. Accept or counter. Nobody else sets your price.</p></div></li>
         <li class="pebble glass"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="13" rx="3"/><path d="M16 12.5h2"/><path d="M2 10h20"/></svg></span><div><h3>Money in, fast</h3><p>Cash in hand, MoMo straight to your wallet. No waiting for payday.</p></div></li>
         <li class="pebble glass"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="5.5" cy="17" r="3.5"/><circle cx="18.5" cy="17" r="3.5"/><path d="M5.5 17h6l3-7h3M14.5 10l-2-3H9"/></svg></span><div><h3>Made for the stage</h3><p>Passengers arrive already agreed on the price. Kick-start and go.</p></div></li>
       </ul>
+      <p class="illus" style="text-align:left;color:#FFF4F4;margin-top:18px">App screens are illustrations. Names and figures are examples.</p>
       <div class="r-cta"><a class="btn btn-white" href="#join">Join the crew</a><span>it only takes a few minutes</span></div>
     </div>
   </div>
@@ -592,15 +603,15 @@ footer .store b{font-size:.92rem}
   <div class="wrap join-grid">
     <div>
       <h2>Got a moto? Join the crew.</h2>
-      <p class="lead">Set your own prices, get paid fast and grow with Kigali's newest ride app. Sign-up takes minutes.</p>
+      <p class="lead">Set your own prices, get paid in cash or straight to MoMo, and grow with Ridons. Signing up takes a few minutes.</p>
       <div class="stores">
-        <a class="store" href="#" data-store="android" aria-label="Get it on Google Play"><svg aria-hidden="true"><use href="#gp"/></svg><span><small>Get it on</small><b>Google Play</b></span></a>
-        <a class="store" href="#" data-store="ios" aria-label="Download on the App Store"><svg aria-hidden="true"><use href="#ap"/></svg><span><small>Download on the</small><b>App Store</b></span></a>
+        <a class="store" href="#" data-store="android" aria-label="Google Play: coming soon"><svg aria-hidden="true" focusable="false"><use href="#i-dl"/></svg><span><small>Coming soon to</small><b>Google Play</b></span></a>
+        <a class="store" href="#" data-store="ios" aria-label="App Store: coming soon"><svg aria-hidden="true" focusable="false"><use href="#i-dl"/></svg><span><small>Coming soon to the</small><b>App Store</b></span></a>
       </div>
     </div>
     <ol class="join-steps">
       <li><div><b>Get the app and sign up</b><small>All you need is your phone number.</small></div></li>
-      <li><div><b>Upload your docs</b><small>National ID, bike registration, insurance and a clear photo of you. We check them fast.</small></div></li>
+      <li><div><b>Upload your docs</b><small>National ID, bike registration, insurance and a clear photo of you. We review them and message you on WhatsApp.</small></div></li>
       <li><div><b>Do a quick training</b><small>In Kinyarwanda. Learn the app, safety and the Ridons way.</small></div></li>
       <li><div><b>Grab your vest and go</b><small>Pick up your Ridons vest and badge, switch online and start earning.</small></div></li>
     </ol>
@@ -611,20 +622,19 @@ footer .store b{font-size:.92rem}
 <section id="faq" style="padding-bottom:clamp(40px,6vw,64px)">
   <div class="wrap faq-wrap">
     <div class="center" style="display:grid;gap:14px;justify-items:center">
-      <span class="pill">FAQs</span>
       <h2>Common questions</h2>
     </div>
     <div class="faq">
       <details><summary>Do I have to bargain every time?</summary><div class="a">Nope. We suggest a fair price for your trip. Tap Confirm and you're set. Only bargain if you feel like it.</div></details>
       <details><summary>Can I still pay with cash?</summary><div class="a">Yep. Cash or MTN MoMo, your choice. You pay exactly what you agreed. Not a franc more.</div></details>
-      <details><summary>Where does Ridons work?</summary><div class="a">Kigali, starting with Kimihurura, Remera and Nyarutarama. More neighbourhoods are coming soon.</div></details>
-      <details><summary>Is it faster than walking to the stage?</summary><div class="a">Way faster. Your rider comes to you, so there's no walking and no standing around bargaining.</div></details>
+      <details><summary>Where does Ridons work?</summary><div class="a">We're starting in Kigali, in Kimihurura, Remera and Nyarutarama. More neighbourhoods will follow.</div></details>
+      <details><summary>Is it faster than walking to the stage?</summary><div class="a">Often, yes. Your rider comes to you, so you skip the walk and the bargaining.</div></details>
       <details><summary>How much of the fare does the rider keep?</summary><div class="a">Most of it. Ridons takes a small fee, only when a trip is finished. The rest goes straight to the rider.</div></details>
-      <details class="extra" hidden><summary>What if the rider asks for more at the end?</summary><div class="a">Don't pay it. The agreed price is final. Report it in the app or on WhatsApp and we'll sort it out fast.</div></details>
+      <details class="extra" hidden><summary>What if the rider asks for more at the end?</summary><div class="a">Don't pay it. The agreed price is final. Report it in the app or on WhatsApp and we'll look into it.</div></details>
       <details class="extra" hidden><summary>Can I choose my rider?</summary><div class="a">Always. You see every offer with name, photo, rating and plate, then you pick. We never pick for you.</div></details>
       <details class="extra" hidden><summary>I'm a rider. Can I skip a trip?</summary><div class="a">Anytime. Accept, counter or skip. Your bike, your price, your call.</div></details>
       <details class="extra" hidden><summary>I left something behind. Now what?</summary><div class="a">Hit us up in the app or on WhatsApp. We'll reach your rider and help get it back to you.</div></details>
-      <details class="extra" hidden><summary>Is my data safe?</summary><div class="a">Yes. It's encrypted, protected under Rwanda's data protection law, and we never sell it.</div></details>
+      <details class="extra" hidden><summary>Is my data safe?</summary><div class="a">We protect it under Rwanda's data protection law, keep only what we need, and never sell it. Read our <a href="privacy.html" style="color:var(--red);font-weight:600">Privacy Policy</a>.</div></details>
     </div>
     <button class="more" type="button" id="more">See all questions →</button>
     <p class="contact">Still curious? Hit us up on WhatsApp at <b>+250 789 914 381</b> or email <b>hello@ridons.rw</b></p>
@@ -650,32 +660,54 @@ footer .store b{font-size:.92rem}
         <a class="logo" href="#top">Ridons</a>
         <!-- LAUNCH TODO: replace # with your real social profile links -->
         <div class="social">
-          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 8h3V4h-3c-2.8 0-4 1.8-4 4.3V10H7v4h3v8h4v-8h3l1-4h-4V8.6c0-.4.3-.6.6-.6z"/></svg></a>
-          <a href="#" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 3h3.3l-7.2 8.2L22 21h-6.6l-5.2-6.8L4.3 21H1l7.7-8.8L.6 3h6.8l4.7 6.2zm-1.2 16h1.8L6.4 4.9H4.4z"/></svg></a>
-          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
-          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 3a2 2 0 1 1 0 4 2 2 0 0 1 0-4zM2.5 8.5h3V21h-3zM9 8.5h3v1.7c.6-1 1.8-2 3.8-2 3.3 0 4.2 2.1 4.2 5V21h-3v-7c0-1.6-.3-2.9-2-2.9s-3 1.2-3 3V21H9z"/></svg></a>
-          <a href="#" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 2c.3 2.4 1.7 4 4 4.2v3.3c-1.5 0-2.8-.4-4-1.2V15a6.5 6.5 0 1 1-6.5-6.5c.3 0 .6 0 .9.1v3.4a3.2 3.2 0 1 0 2.3 3V2z"/></svg></a>
+          <a data-social="facebook" hidden href="#" aria-label="Ridons on Facebook" target="_blank" rel="noopener"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="currentColor"><path d="M14 8h3V4h-3c-2.8 0-4 1.8-4 4.3V10H7v4h3v8h4v-8h3l1-4h-4V8.6c0-.4.3-.6.6-.6z"/></svg></a>
+          <a data-social="x" hidden href="#" aria-label="Ridons on X" target="_blank" rel="noopener"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 3h3.3l-7.2 8.2L22 21h-6.6l-5.2-6.8L4.3 21H1l7.7-8.8L.6 3h6.8l4.7 6.2zm-1.2 16h1.8L6.4 4.9H4.4z"/></svg></a>
+          <a data-social="instagram" hidden href="#" aria-label="Ridons on Instagram" target="_blank" rel="noopener"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+          <a data-social="linkedin" hidden href="#" aria-label="Ridons on LinkedIn" target="_blank" rel="noopener"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="currentColor"><path d="M4 3a2 2 0 1 1 0 4 2 2 0 0 1 0-4zM2.5 8.5h3V21h-3zM9 8.5h3v1.7c.6-1 1.8-2 3.8-2 3.3 0 4.2 2.1 4.2 5V21h-3v-7c0-1.6-.3-2.9-2-2.9s-3 1.2-3 3V21H9z"/></svg></a>
+          <a data-social="tiktok" hidden href="#" aria-label="Ridons on TikTok" target="_blank" rel="noopener"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="currentColor"><path d="M16 2c.3 2.4 1.7 4 4 4.2v3.3c-1.5 0-2.8-.4-4-1.2V15a6.5 6.5 0 1 1-6.5-6.5c.3 0 .6 0 .9.1v3.4a3.2 3.2 0 1 0 2.3 3V2z"/></svg></a>
         </div>
       </div>
       <div class="stores">
-        <a class="store" href="#" data-store="android" aria-label="Get it on Google Play"><svg aria-hidden="true"><use href="#gp"/></svg><span><small>Get it on</small><b>Google Play</b></span></a>
-        <a class="store" href="#" data-store="ios" aria-label="Download on the App Store"><svg aria-hidden="true"><use href="#ap"/></svg><span><small>Download on the</small><b>App Store</b></span></a>
+        <a class="store" href="#" data-store="android" aria-label="Google Play: coming soon"><svg aria-hidden="true" focusable="false"><use href="#i-dl"/></svg><span><small>Coming soon to</small><b>Google Play</b></span></a>
+        <a class="store" href="#" data-store="ios" aria-label="App Store: coming soon"><svg aria-hidden="true" focusable="false"><use href="#i-dl"/></svg><span><small>Coming soon to the</small><b>App Store</b></span></a>
       </div>
     </div>
     <div class="f-base">
-      <span>© 2026 Ridons · Made in Kigali</span>
-      <nav aria-label="Legal"><a href="#">Terms and Conditions</a><a href="#">Privacy</a><a href="#">Cookies</a></nav>
+      <div class="biz">
+        <span>© 2026 <span data-biz="legal_name">Ridons</span> · Kigali, Rwanda</span>
+        <span data-biz-line="rdb_number" hidden>Company code (RDB): <span data-biz="rdb_number"></span></span>
+        <span data-biz-line="tin" hidden>TIN: <span data-biz="tin"></span></span>
+        <span>hello@ridons.rw · +250 789 914 381</span>
+        <span>No tracking or advertising cookies on this site.</span>
+      </div>
+      <nav aria-label="Legal"><a href="terms.html">Terms</a><a href="privacy.html">Privacy</a><a href="cookies.html">Cookies</a><a href="refunds.html">Refunds</a></nav>
     </div>
   </div>
 </footer>
 
 <script>
-/* LAUNCH TODO: paste the live store links here. Every store button on the page uses them. */
-const STORE_LINKS = { android: "#", ios: "#" };
-document.querySelectorAll('[data-store]').forEach(a => {
-  const url = STORE_LINKS[a.dataset.store];
-  if (url && url !== '#') { a.href = url; a.target = '_blank'; a.rel = 'noopener'; }
-});
+document.documentElement.lang = 'en';
+
+/* Store links, company details and social profiles live in business.json, so they are edited in one place.
+   Until a store link is set, its button says "Coming soon" and goes nowhere. */
+document.querySelectorAll('[data-store]').forEach(a => { a.removeAttribute('href'); a.setAttribute('aria-disabled', 'true'); a.setAttribute('role', 'link'); });
+fetch('business.json').then(r => r.ok ? r.json() : null).then(biz => {
+  if (!biz) return;
+  const stores = biz.store_links || {};
+  document.querySelectorAll('[data-store]').forEach(a => {
+    const url = stores[a.dataset.store];
+    if (!url) return;
+    a.href = url; a.target = '_blank'; a.rel = 'noopener';
+    a.removeAttribute('aria-disabled'); a.removeAttribute('role');
+    const small = a.querySelector('small');
+    small.textContent = a.dataset.store === 'ios' ? 'Download on the' : 'Get it on';
+    a.setAttribute('aria-label', (a.dataset.store === 'ios' ? 'Download on the App Store' : 'Get it on Google Play'));
+  });
+  document.querySelectorAll('[data-biz]').forEach(el => { const v = biz[el.dataset.biz]; if (v) el.textContent = v; });
+  document.querySelectorAll('[data-biz-line]').forEach(el => { el.hidden = !biz[el.dataset.bizLine]; });
+  const social = biz.social || {};
+  document.querySelectorAll('[data-social]').forEach(a => { const u = social[a.dataset.social]; if (u) { a.href = u; a.hidden = false; } });
+}).catch(() => {});
 
 /* mobile menu */
 const menuBtn = document.querySelector('.menu-btn'), mnav = document.getElementById('mnav');

@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Refund Policy · Ridons</title>
+<meta name="description" content="When and how Ridons passengers and riders get refunds.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700;800&display=swap">
+<link rel="stylesheet" href="legal.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header><div class="bar"><a class="logo" href="index.html" aria-label="Ridons home">Ridons</a><a class="back" href="index.html">Back to home</a></div></header>
+<main id="main">
+<h1>Refund Policy</h1>
+<p class="updated">Last updated 2 October 2026</p>
+<!-- LEGAL REVIEW NEEDED before launch: confirm refund timelines with MTN MoMo and consumer protection requirements. -->
+<div class="summary">
+  <p><b>The short version</b></p>
+  <p>You pay only the price you agreed. If you were charged when you shouldn't have been, or charged more than you agreed, we'll put it right.</p>
+</div>
+
+<h2>When passengers get a refund</h2>
+<ul>
+  <li>You were charged twice for the same trip.</li>
+  <li>You were charged, but the trip didn't happen.</li>
+  <li>You paid more than the price you agreed in the app.</li>
+  <li>The rider ended the trip early without a good reason. We refund the part of the trip that didn't happen.</li>
+</ul>
+
+<h2>When there is no refund</h2>
+<p>A completed trip at the agreed price isn't refunded, because both sides agreed the price before the ride started. If something went wrong during the trip, please still report it. We take every report seriously.</p>
+
+<h2>How to ask for a refund</h2>
+<ol>
+  <li>Report it in the app, or message us on WhatsApp at <b>+250 789 914 381</b>.</li>
+  <li>Tell us the date and time of the trip, and the phone number you used.</li>
+  <li>We check the trip record, the agreed price and the payment, and tell you what we decide.</li>
+</ol>
+
+<h2>How you get your money back</h2>
+<p>Approved refunds go back to the MoMo number you paid with. If you paid in cash, we send the refund to a MoMo number you give us. We keep you updated until it's done.</p>
+
+<h2>For riders</h2>
+<p>Ridons only charges its service fee on completed trips. If a fee was taken for a trip that didn't happen, or by mistake, tell us and we'll return it to your MoMo wallet.</p>
+
+<h2>Your rights</h2>
+<p>This policy doesn't limit any rights you have under Rwandan consumer protection law.</p>
+<div class="contact">
+  <p><span data-biz="legal_name">Ridons</span>, Kigali, Rwanda<span data-biz-line="rdb_number" hidden> · Company code (RDB): <span data-biz="rdb_number"></span></span><span data-biz-line="tin" hidden> · TIN: <span data-biz="tin"></span></span></p>
+  <p>Questions: <b>hello@ridons.rw</b> · WhatsApp or phone <b>+250 789 914 381</b></p>
+</div>
+</main>
+<footer><nav aria-label="Policies"><a href="terms.html">Terms</a><a href="privacy.html">Privacy</a><a href="cookies.html">Cookies</a><a href="refunds.html" aria-current="page">Refunds</a></nav></footer>
+<script>
+fetch('business.json').then(r => r.ok ? r.json() : null).then(biz => {
+  if (!biz) return;
+  document.querySelectorAll('[data-biz]').forEach(el => { const v = biz[el.dataset.biz]; if (v) el.textContent = v; });
+  document.querySelectorAll('[data-biz-line]').forEach(el => { el.hidden = !biz[el.dataset.bizLine]; });
+}).catch(() => {});
+</script>
+</body>
+</html>

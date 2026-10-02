@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cookie Policy · Ridons</title>
+<meta name="description" content="Ridons uses no tracking, analytics or advertising cookies on its website.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700;800&display=swap">
+<link rel="stylesheet" href="legal.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header><div class="bar"><a class="logo" href="index.html" aria-label="Ridons home">Ridons</a><a class="back" href="index.html">Back to home</a></div></header>
+<main id="main">
+<h1>Cookie Policy</h1>
+<p class="updated">Last updated 2 October 2026</p>
+<!-- LEGAL REVIEW NEEDED before launch. If analytics or ads are ever added, a consent banner must be added first. -->
+<div class="summary">
+  <p><b>The short version</b></p>
+  <p>This website doesn't use tracking, analytics or advertising cookies, so there is nothing to accept or reject.</p>
+</div>
+
+<h2>What cookies are</h2>
+<p>Cookies are small files a website saves in your browser. Similar tools include local storage and tracking pixels.</p>
+
+<h2>This website</h2>
+<ul>
+  <li><b>No tracking or analytics cookies.</b> We don't measure your visit or follow you to other sites.</li>
+  <li><b>No advertising cookies or pixels.</b></li>
+  <li><b>No forms.</b> We don't collect your name, number or email on this website.</li>
+</ul>
+
+<h2>Services that load on this page</h2>
+<ul>
+  <li><b>Google Fonts</b> supplies the fonts. Your browser downloads them from Google, which receives your IP address to deliver them. See <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's privacy policy</a>.</li>
+  <li><b>Our hosting provider</b> keeps short-term server logs, such as IP address and time of visit, to keep the site secure and working.</li>
+</ul>
+
+<h2>The Ridons app</h2>
+<p>The app stores a few things on your phone so it works, for example to keep you signed in and remember your language. These are needed for the app to run and are not used for advertising.</p>
+
+<h2>If this changes</h2>
+<p>If we ever add analytics or advertising tools, we will update this policy first and ask for your consent before setting any non-essential cookies.</p>
+<div class="contact">
+  <p><span data-biz="legal_name">Ridons</span>, Kigali, Rwanda<span data-biz-line="rdb_number" hidden> · Company code (RDB): <span data-biz="rdb_number"></span></span><span data-biz-line="tin" hidden> · TIN: <span data-biz="tin"></span></span></p>
+  <p>Questions: <b>hello@ridons.rw</b> · WhatsApp or phone <b>+250 789 914 381</b></p>
+</div>
+</main>
+<footer><nav aria-label="Policies"><a href="terms.html">Terms</a><a href="privacy.html">Privacy</a><a href="cookies.html" aria-current="page">Cookies</a><a href="refunds.html">Refunds</a></nav></footer>
+<script>
+fetch('business.json').then(r => r.ok ? r.json() : null).then(biz => {
+  if (!biz) return;
+  document.querySelectorAll('[data-biz]').forEach(el => { const v = biz[el.dataset.biz]; if (v) el.textContent = v; });
+  document.querySelectorAll('[data-biz-line]').forEach(el => { el.hidden = !biz[el.dataset.bizLine]; });
+}).catch(() => {});
+</script>
+</body>
+</html>
