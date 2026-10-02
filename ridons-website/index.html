@@ -4,8 +4,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800&display=swap">
 <style>
-/* Layout: follows the Figma draft. Photo hero with a wave edge, a white "how it works" band built around
-   a phone you can actually use, a navy band for riders, a photo banner to join, then FAQs and a navy footer. */
+/* Layout: follows the Figma draft on an all-white page. Hero with app screens, "how it works" built around
+   a phone you can actually use, a rider section, the join steps, then FAQs and the footer. */
 :root{
   --red:#D0202A; --red-hover:#B51A23; --red-soft:#FDEDEE; --red-line:#F6CDD0;
   --navy:#0E1A2E; --navy-2:#16243C; --navy-line:#26354F; --on-navy:#FFFFFF; --on-navy-muted:#AEB8CA;
@@ -19,14 +19,14 @@
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
-    --bg:#0B1322; --bg-2:#111C30; --fg:#F2F4F8; --muted:#A3AEC2; --line:#22304A;
+    --bg:#121212; --bg-2:#1C1C1E; --fg:#F4F4F5; --muted:#A1A1AA; --line:#2C2C2E;
     --red-soft:#2A1519; --red-line:#4A2027; --ok:#3CC47A;
     --shadow:0 30px 60px -24px rgba(0,0,0,.7);
     color-scheme:dark;
   }
 }
 :root[data-theme="dark"]{
-  --bg:#0B1322; --bg-2:#111C30; --fg:#F2F4F8; --muted:#A3AEC2; --line:#22304A;
+  --bg:#121212; --bg-2:#1C1C1E; --fg:#F4F4F5; --muted:#A1A1AA; --line:#2C2C2E;
   --red-soft:#2A1519; --red-line:#4A2027; --ok:#3CC47A;
   --shadow:0 30px 60px -24px rgba(0,0,0,.7);
   color-scheme:dark;
@@ -58,8 +58,8 @@ section{padding-block:clamp(64px,9vw,104px)}
 .btn-red{background:var(--red);color:#fff}
 .btn-red:hover{background:var(--red-hover)}
 .stores{display:flex;flex-wrap:wrap;gap:12px}
-.store{display:inline-flex;align-items:center;gap:10px;padding:8px 16px 8px 12px;border-radius:10px;border:1.5px solid rgba(255,255,255,.75);color:#fff;text-decoration:none;background:rgba(0,0,0,.25);min-width:150px}
-.store:hover{background:rgba(0,0,0,.5)}
+.store{display:inline-flex;align-items:center;gap:10px;padding:8px 16px 8px 12px;border-radius:10px;border:1.5px solid #000;color:#fff;text-decoration:none;background:#000;min-width:150px}
+.store:hover{background:#2A2A2A}
 .store svg{width:24px;height:24px;flex:none}
 .store span{display:grid;line-height:1.1}
 .store small{font-size:.62rem;letter-spacing:.04em;text-transform:uppercase;opacity:.85}
@@ -82,23 +82,15 @@ section{padding-block:clamp(64px,9vw,104px)}
 @media (max-width:860px){.nav,.top-right .btn{display:none}.menu-btn{display:inline-block}.top-right{margin-left:auto}}
 
 /* hero */
-.hero{position:relative;color:#fff;padding-block:clamp(56px,8vw,96px) clamp(120px,14vw,170px);overflow:hidden;
-  /* PHOTO SLOT: publish the woman-at-the-stage photo as hero.jpg next to this page */
-  background:
-    linear-gradient(100deg, rgba(14,26,46,.92) 0%, rgba(14,26,46,.72) 45%, rgba(14,26,46,.35) 100%),
-    url("hero.jpg") center/cover no-repeat,
-    radial-gradient(120% 90% at 85% 10%, #2B3D5E 0%, #0E1A2E 60%);
-}
-.hero::after{content:"";position:absolute;left:-5%;right:-5%;bottom:-1px;height:clamp(70px,9vw,120px);background:var(--bg);
-  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 120' preserveAspectRatio='none'%3E%3Cpath d='M0 40 C 360 140 720 140 1000 70 C 1200 20 1340 10 1440 0 L1440 120 L0 120 Z'/%3E%3C/svg%3E") center/100% 100% no-repeat;
-          mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 120' preserveAspectRatio='none'%3E%3Cpath d='M0 40 C 360 140 720 140 1000 70 C 1200 20 1340 10 1440 0 L1440 120 L0 120 Z'/%3E%3C/svg%3E") center/100% 100% no-repeat}
+.hero{position:relative;padding-block:clamp(48px,7vw,88px);overflow:hidden;background:var(--bg)}
 .hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center}
 .hero-grid > *{min-width:0}
 @media (max-width:900px){.hero-grid{grid-template-columns:1fr}}
-.hero p.lead{margin-top:18px;font-size:1.15rem;color:#E3E8F1;max-width:44ch}
+.hero p.lead{margin-top:18px;font-size:1.15rem;color:var(--muted);max-width:44ch}
+.hero h1 em{font-style:normal;color:var(--red)}
 .hero .stores{margin-top:30px}
 .hero-facts{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px;padding:0;list-style:none}
-.hero-facts li{font-size:.85rem;font-weight:600;padding:6px 12px;border-radius:999px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22)}
+.hero-facts li{font-size:.85rem;font-weight:600;padding:6px 12px;border-radius:999px;background:var(--red-soft);color:var(--red);border:1px solid var(--red-line)}
 .hero-phones{position:relative;height:460px}
 .hero-phones .phone{position:absolute;width:220px}
 .hero-phones .p-back{right:0;top:0;transform:rotate(4deg)}
@@ -180,23 +172,21 @@ section{padding-block:clamp(64px,9vw,104px)}
 .safe p{color:var(--muted);font-size:.92rem}
 
 /* navy rider band */
-.navy{background:var(--navy);color:var(--on-navy);background-image:radial-gradient(circle, rgba(255,255,255,.05) 1px, transparent 1.5px);background-size:22px 22px}
+.navy{background:var(--bg);border-top:1px solid var(--line)}
 .earn{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(36px,6vw,80px);align-items:center}
 .earn > *{min-width:0}
 @media (max-width:900px){.earn{grid-template-columns:1fr}}
 .earn .phone{width:280px;margin-inline:auto;transform:rotate(-6deg)}
-.earn h2{color:#fff}
 .earn-list{margin-top:26px;display:grid}
-.earn-list .feat{padding-block:18px;border-bottom:1px solid var(--navy-line)}
+.earn-list .feat{padding-block:18px;border-bottom:1px solid var(--line)}
 .earn-list .feat:last-child{border-bottom:0}
-.earn-list .chk{color:#fff}
-.earn-list p{color:var(--on-navy-muted)}
-.pill-dark{background:rgba(208,32,42,.18);border-color:rgba(208,32,42,.5);color:#FF9096}
+.earn-list .chk{color:var(--red)}
+.earn-list p{color:var(--muted)}
 .keep{margin-top:22px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
 @media (max-width:520px){.keep{grid-template-columns:1fr}}
-.keep div{border:1px solid var(--navy-line);border-radius:14px;padding:14px 16px;background:var(--navy-2)}
-.keep b{display:block;font-size:1.55rem;font-weight:800;letter-spacing:-.02em}
-.keep span{font-size:.85rem;color:var(--on-navy-muted)}
+.keep div{border:1px solid var(--line);border-radius:14px;padding:14px 16px;background:var(--bg-2)}
+.keep b{display:block;font-size:1.55rem;font-weight:800;letter-spacing:-.02em;color:var(--red)}
+.keep span{font-size:.85rem;color:var(--muted)}
 .earn-card{background:linear-gradient(135deg,#B3141D,#7E0D14);color:#fff;border-radius:12px;padding:9px 10px;display:grid;gap:6px}
 .earn-card .r1{display:flex;justify-content:space-between;align-items:center;font-size:9px;opacity:.9}
 .earn-card .big{font-size:15px;font-weight:800;letter-spacing:.03em}
@@ -214,24 +204,17 @@ section{padding-block:clamp(64px,9vw,104px)}
 .btn2{display:grid;grid-template-columns:1fr 1fr;gap:6px}
 
 /* join banner */
-.join{position:relative;color:#fff;overflow:hidden;
-  /* PHOTO SLOT: publish the rider-on-moto photo as join.jpg next to this page */
-  background:
-    linear-gradient(90deg, rgba(14,26,46,.93) 0%, rgba(14,26,46,.78) 50%, rgba(14,26,46,.3) 100%),
-    url("join.jpg") center right/cover no-repeat,
-    radial-gradient(100% 120% at 90% 50%, #3A2A33 0%, #0E1A2E 65%);
-}
-.join h2{color:#fff}
+.join{background:var(--bg);border-top:1px solid var(--line)}
 .join-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
 .join-grid > *{min-width:0}
 @media (max-width:900px){.join-grid{grid-template-columns:1fr}}
-.join p.lead{margin-top:14px;color:#E3E8F1;max-width:46ch;font-size:1.08rem}
+.join p.lead{margin-top:14px;color:var(--muted);max-width:46ch;font-size:1.08rem}
 .join .stores{margin-top:26px}
-.join-steps{list-style:none;margin:0;padding:22px;display:grid;gap:16px;background:rgba(14,26,46,.6);border:1px solid rgba(255,255,255,.18);border-radius:18px;backdrop-filter:blur(6px);counter-reset:j}
+.join-steps{list-style:none;margin:0;padding:22px;display:grid;gap:16px;background:var(--bg-2);border:1px solid var(--line);border-radius:18px;counter-reset:j}
 .join-steps li{display:grid;grid-template-columns:30px 1fr;gap:12px;counter-increment:j;font-size:.95rem}
-.join-steps li::before{content:counter(j);width:30px;height:30px;border-radius:50%;background:var(--red);display:grid;place-items:center;font-weight:700;font-size:.85rem}
+.join-steps li::before{content:counter(j);width:30px;height:30px;border-radius:50%;background:var(--red);display:grid;place-items:center;font-weight:700;font-size:.85rem;color:#fff}
 .join-steps b{display:block}
-.join-steps small{color:var(--on-navy-muted);font-size:.86rem}
+.join-steps small{color:var(--muted);font-size:.86rem}
 
 /* faq */
 .faq-wrap{max-width:760px;margin-inline:auto}
@@ -247,12 +230,12 @@ section{padding-block:clamp(64px,9vw,104px)}
 .contact b{color:var(--fg);user-select:all;white-space:nowrap}
 
 /* footer */
-footer{background:var(--navy);color:var(--on-navy-muted);padding-block:44px 28px;font-size:.88rem}
-.f-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:20px;padding-bottom:26px;border-bottom:1px solid var(--navy-line)}
+footer{background:var(--bg);color:var(--muted);border-top:1px solid var(--line);padding-block:44px 28px;font-size:.88rem}
+.f-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:20px;padding-bottom:26px;border-bottom:1px solid var(--line)}
 .f-left{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
-footer .logo{color:#fff;font-size:1.5rem}
+footer .logo{font-size:1.5rem}
 .social{display:flex;gap:14px}
-.social a{color:#fff;opacity:.85}
+.social a{color:var(--fg);opacity:.8}
 .social a:hover{opacity:1}
 .social svg{width:18px;height:18px;display:block}
 footer .store{padding:6px 12px 6px 10px;min-width:0;border-width:1px}
@@ -260,7 +243,7 @@ footer .store b{font-size:.92rem}
 .f-base{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;padding-top:20px}
 .f-base nav{display:flex;flex-wrap:wrap;gap:20px}
 .f-base a{text-decoration:none}
-.f-base a:hover{color:#fff}
+.f-base a:hover{color:var(--red)}
 </style>
 
 <!-- shared drawings reused across the page -->
@@ -322,7 +305,7 @@ footer .store b{font-size:.92rem}
 <section class="hero" id="top">
   <div class="wrap hero-grid">
     <div>
-      <h1>Agree on the price before the ride starts.</h1>
+      <h1>Agree on the price <em>before the ride starts.</em></h1>
       <p class="lead">You say what you want to pay. A rider says yes or makes a counter-offer. Once you both agree, the price is fixed. No arguing when you get off.</p>
       <div class="stores" id="get-app">
         <a class="store" href="#" data-store="android" aria-label="Get it on Google Play"><svg aria-hidden="true"><use href="#gp"/></svg><span><small>Get it on</small><b>Google Play</b></span></a>
@@ -437,7 +420,7 @@ footer .store b{font-size:.92rem}
     </div>
 
     <div>
-      <span class="pill pill-dark">For riders</span>
+      <span class="pill">For riders</span>
       <h2 style="margin-top:14px">Earn more.<br>Keep your price.</h2>
       <div class="earn-list">
         <div class="feat"><svg class="chk" aria-hidden="true"><use href="#chk"/></svg><div><h3>No app setting your price</h3><p>You know the streets and the traffic. When a passenger asks for a ride, you decide if the price is right. Accept it, or make a counter-offer.</p></div></div>
