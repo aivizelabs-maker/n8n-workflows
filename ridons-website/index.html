@@ -184,14 +184,12 @@ section{padding-block:clamp(64px,9vw,104px)}
 .feats .feat h3{font-size:1.1rem}
 .feat .chk{width:30px;height:30px;color:var(--red)}
 .feat p{color:var(--muted);font-size:1rem;margin-top:4px}
-.safety{padding-top:clamp(24px,4vw,48px);padding-bottom:clamp(24px,4vw,48px)}
+.safety{padding-top:0;padding-bottom:clamp(40px,6vw,72px)}
 .safety h2{font-size:clamp(1.8rem,3.6vw,2.6rem);text-align:center}
 .sf-row{list-style:none;padding:0;margin:clamp(28px,4vw,44px) 0 0;display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
 @media (max-width:900px){.sf-row{grid-template-columns:1fr 1fr}}
 @media (max-width:480px){.sf-row{grid-template-columns:1fr;gap:20px}}
-.sf-row li{border-top:2px solid var(--red);padding-top:14px;display:grid;gap:4px;align-content:start}
-.sf-row b{font-size:1.08rem}
-.sf-row span{color:var(--muted);font-size:.95rem}
+.sf-row li{border-top:2px solid var(--red);padding-top:14px;font-weight:700;font-size:1.08rem}
 .safe-row{list-style:none;padding:28px 0 0;margin:clamp(56px,7vw,80px) 0 0;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;justify-content:center;gap:14px 40px}
 .safe-row li{display:flex;align-items:center;gap:10px;font-weight:600;font-size:.98rem}
 .safe-row svg{width:22px;height:22px;color:var(--red);flex:none}
@@ -325,7 +323,7 @@ section{padding-block:clamp(64px,9vw,104px)}
 
 /* join banner */
 .join{background:var(--bg)}
-.join .wrap{border-top:1px solid var(--line);padding-top:clamp(48px,6vw,72px)}
+.join{padding-top:clamp(24px,4vw,48px)}
 .join-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
 .join-grid > *{min-width:0}
 @media (max-width:900px){.join-grid{grid-template-columns:1fr}}
@@ -408,8 +406,8 @@ footer .store b{font-size:.92rem}
     <a class="logo" href="#top" aria-label="Ridons home">Ridons</a>
     <nav class="nav" aria-label="Main">
       <a href="#how">How it works</a>
-      <a href="#drive">For motari</a>
       <a href="#safety">Safety</a>
+      <a href="#drive">For motari</a>
       <a href="#mission">Our mission</a>
       <a href="#faq">FAQs</a>
     </nav>
@@ -423,8 +421,8 @@ footer .store b{font-size:.92rem}
   </div>
   <nav class="mnav" id="mnav" aria-label="Mobile" hidden>
     <a href="#how">How it works</a>
-    <a href="#drive">For motari</a>
     <a href="#safety">Safety</a>
+    <a href="#drive">For motari</a>
     <a href="#mission">Our mission</a>
     <a href="#faq">FAQs</a>
     <a class="btn btn-red" href="#get-app">Get the app</a>
@@ -513,6 +511,19 @@ footer .store b{font-size:.92rem}
 </section>
 
 
+<!-- SAFETY -->
+<section id="safety" class="safety">
+  <div class="wrap">
+    <h2>Safe from pickup to drop-off.</h2>
+    <ul class="sf-row">
+      <li>Verified motari</li>
+      <li>Know who's coming</li>
+      <li>Share your trip live</li>
+      <li>Help in the app</li>
+    </ul>
+  </div>
+</section>
+
 <!-- MISSION: why we exist, written for motari, passengers and funders alike -->
 <section id="mission" class="mission">
   <div class="wrap m-grid">
@@ -578,19 +589,6 @@ footer .store b{font-size:.92rem}
       </ol>
       <div class="c-cta"><a class="btn btn-white" href="#join">Earn with Ridons</a></div>
     </div>
-  </div>
-</section>
-
-<!-- SAFETY -->
-<section id="safety" class="safety">
-  <div class="wrap">
-    <h2>Safe from pickup to drop-off.</h2>
-    <ul class="sf-row">
-      <li><b>Verified motari</b><span>ID, licence, bike papers and insurance checked.</span></li>
-      <li><b>Know who's coming</b><span>Name, photo, plate and rating before pickup.</span></li>
-      <li><b>Share your trip</b><span>Family and friends can follow along live.</span></li>
-      <li><b>Help in the app</b><span>Report anything. We review every trip.</span></li>
-    </ul>
   </div>
 </section>
 
