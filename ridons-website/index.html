@@ -286,10 +286,12 @@ section{padding-block:clamp(64px,9vw,104px)}
 .navy .wrap{position:relative;z-index:1}
 .earn{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,7vw,96px);align-items:center}
 .earn > *{min-width:0}
-@media (max-width:900px){.earn{grid-template-columns:1fr}}
+@media (max-width:900px){.earn{grid-template-columns:1fr}.c-copy{order:-1}.c-visual{margin-top:0}}
 .c-visual{position:relative;display:grid;place-items:center;margin-top:calc(-1 * clamp(40px,8vw,110px))}
 .c-visual::before{content:"";position:absolute;width:min(420px,92%);aspect-ratio:1;border-radius:50%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16)}
 .c-visual .phone{position:relative;width:min(270px,70%);transform:rotate(-4deg)}
+.c-copy .kicker{margin-bottom:8px}
+.c-who{font-size:1.15rem;font-weight:600;color:#FFF4F4;margin:0 0 18px}
 .c-copy h2{font-size:clamp(2.1rem,4.6vw,3.4rem);line-height:1.08}
 .c-lead{margin-top:16px;color:#FFF4F4;font-size:1.15rem;max-width:40ch}
 .c-flow{list-style:none;padding:0;margin:30px 0 0;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;position:relative}
@@ -582,6 +584,8 @@ footer .store b{font-size:.92rem}
     </div>
 
     <div class="c-copy">
+      <p class="kicker">For motari</p>
+      <p class="c-who">Ride a moto in Kigali? This is for you.</p>
       <h2>Your bike.<br>Your price.<br>Your business.</h2>
       <p class="c-lead">You know Kigali's streets better than anyone. On Ridons, you decide what every ride is worth.</p>
       <ol class="c-flow">
