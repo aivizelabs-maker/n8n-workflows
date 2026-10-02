@@ -9,6 +9,16 @@
   "email": "hello@ridons.rw",
   "privacy_email": "hello@ridons.rw",
   "partnerships_email": "cassie@ridons.rw",
-  "store_links": { "android": "", "ios": "" },
-  "social": { "facebook": "", "x": "", "instagram": "", "linkedin": "", "tiktok": "" }
+  "store_links": {
+    "android": "",
+    "ios": ""
+  },
+  "social": {
+    "facebook": "",
+    "x": "",
+    "instagram": "",
+    "linkedin": "",
+    "tiktok": ""
+  },
+  "website": "https://ridons.com"
 }
