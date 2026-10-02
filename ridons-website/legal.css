@@ -10,7 +10,8 @@ a{color:var(--red);text-underline-offset:3px}
 .skip:focus{top:12px}
 header{border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0px)}
 .bar{max-width:760px;margin-inline:auto;padding:16px 20px;display:flex;justify-content:space-between;align-items:center;gap:16px}
-.logo{font-weight:800;font-size:1.5rem;letter-spacing:-.04em;color:var(--red);text-decoration:none}
+.logo{display:inline-flex;color:var(--red);text-decoration:none}
+.logo-svg{height:26px;width:auto;display:block}
 .back{font-weight:600;font-size:.95rem}
 main{max-width:760px;margin-inline:auto;padding:40px 20px 72px}
 h1{font-size:clamp(2rem,5vw,2.8rem);line-height:1.1;letter-spacing:-.02em;margin:0 0 8px}
