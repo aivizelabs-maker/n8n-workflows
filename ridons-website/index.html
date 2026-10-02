@@ -1,6 +1,6 @@
 <meta charset="utf-8">
 <title>Ridons</title>
-<meta name="description" content="Now live in Kigali. Agree the price before you ride, pick your rider, and pay by cash or MoMo. Moto rides in Kimihurura, Remera and Nyarutarama.">
+<meta name="description" content="Now live in Kigali. Agree the price before you ride, pick your captain, and pay by cash or MoMo. Moto rides in Kimihurura, Remera and Nyarutarama.">
 <meta property="og:title" content="Ridons">
 <meta property="og:description" content="Now live in Kigali. Agree the price before you ride. Cash or MoMo.">
 <meta property="og:type" content="website">
@@ -14,9 +14,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800&family=Caveat:wght@600;700&display=swap">
 <style>
-/* Layout: follows the Figma draft. Bold Ridons-red hero, rider band and footer; white sections between.
+/* Layout: follows the Figma draft. Bold Ridons-red hero, captain band and footer; white sections between.
    One look on every device (no dark variant), on purpose. Hero with app screens, "how it works" built around
-   a phone you can actually use, a rider section, the join steps, then FAQs and the footer. */
+   a phone you can actually use, a captain section, the join steps, then FAQs and the footer. */
 :root{
   --red:#D0202A; --red-hover:#B51A23; --red-soft:#FDEDEE; --red-line:#F6CDD0;
   --navy:#0E1A2E; --navy-2:#16243C; --navy-line:#26354F; --on-navy:#FFFFFF; --on-navy-muted:#AEB8CA;
@@ -98,7 +98,7 @@ section{padding-block:clamp(64px,9vw,104px)}
 .hero-note{margin-top:22px;font-size:.92rem;color:#FFF4F4;font-weight:600;display:flex;align-items:center;gap:8px}
 .live-dot{width:8px;height:8px;border-radius:50%;background:#fff;box-shadow:0 0 0 0 rgba(255,255,255,.7);animation:ping 2s ease-out infinite}
 @keyframes ping{70%{box-shadow:0 0 0 8px rgba(255,255,255,0)}100%{box-shadow:0 0 0 0 rgba(255,255,255,0)}}
-.agreed{position:absolute;z-index:4;left:-70px;bottom:40px;background:linear-gradient(140deg,rgba(80,6,16,.93),rgba(55,4,12,.9))!important;display:flex;align-items:center;gap:12px;padding:12px 16px;border-radius:16px;color:#fff}
+.agreed{position:absolute;z-index:4;left:-70px;bottom:40px;background:linear-gradient(140deg,rgba(70,5,14,.97),rgba(50,3,10,.96))!important;display:flex;align-items:center;gap:12px;padding:12px 16px;border-radius:16px;color:#fff}
 .agreed .t{width:34px;height:34px;border-radius:50%;background:#fff;color:var(--ok);display:grid;place-items:center;flex:none}
 .agreed .t svg{width:18px;height:18px}
 .agreed b{display:block;font-size:1rem;line-height:1.2}
@@ -207,7 +207,7 @@ section{padding-block:clamp(64px,9vw,104px)}
 .blob{position:absolute;border-radius:50%;filter:blur(60px);pointer-events:none;z-index:0}
 .glow{position:absolute;inset:0;overflow:hidden;border-radius:inherit;pointer-events:none;z-index:0}
 
-/* mission: white melts into red at the bottom and runs straight into the rider band */
+/* mission: white melts into red at the bottom and runs straight into the captain band */
 .mission{position:relative;overflow:hidden;padding-top:clamp(24px,4vw,48px);padding-bottom:clamp(150px,16vw,220px);
   background:linear-gradient(180deg,var(--bg) 0%,var(--bg) 58%,#FCE4E5 74%,#F2A6AA 88%,var(--red) 100%)}
 .mission .wrap{position:relative;z-index:1}
@@ -254,48 +254,27 @@ section{padding-block:clamp(64px,9vw,104px)}
 .partner-cta small{color:#FFF4F4;font-size:.85rem}
 .partner-cta small b{color:#fff;user-select:all}
 
-/* navy rider band */
-/* riders band: playful and organic. Morphing blob, bobbing stickers, a road that winds through it. */
-.navy{position:relative;overflow-x:clip;color:#fff;padding-top:clamp(20px,3vw,40px);padding-bottom:clamp(140px,15vw,190px);
-  background:radial-gradient(70% 60% at 20% 30%,#D42530 0%,transparent 70%),radial-gradient(60% 60% at 85% 70%,#B0141D 0%,transparent 70%),var(--red)}
+/* navy captain band */
+/* captains band: calm and simple. Red, one phone, three plain statements. */
+.navy{position:relative;overflow-x:clip;color:#fff;background:var(--red);padding-top:clamp(20px,3vw,40px);padding-bottom:clamp(140px,15vw,190px)}
 .navy::after{content:"";position:absolute;left:-5%;right:-5%;bottom:-1px;height:clamp(60px,8vw,110px);background:var(--bg);z-index:1;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 120' preserveAspectRatio='none'%3E%3Cpath d='M0 0 C 300 20 500 110 820 90 C 1100 72 1300 30 1440 50 L1440 120 L0 120 Z'/%3E%3C/svg%3E") center/100% 100% no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 120' preserveAspectRatio='none'%3E%3Cpath d='M0 0 C 300 20 500 110 820 90 C 1100 72 1300 30 1440 50 L1440 120 L0 120 Z'/%3E%3C/svg%3E") center/100% 100% no-repeat}
 .navy .wrap{position:relative;z-index:1}
-.navy .pill{background:rgba(255,255,255,.16);color:#fff;border-color:rgba(255,255,255,.4)}
-.road{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
-.earn{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,80px);align-items:center}
+.earn{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,7vw,96px);align-items:center}
 .earn > *{min-width:0}
 @media (max-width:900px){.earn{grid-template-columns:1fr}}
-.r-visual{position:relative;display:grid;place-items:center;width:100%;max-width:480px;margin-inline:auto;aspect-ratio:1/1.05;margin-top:calc(-1 * clamp(40px,8vw,120px))}
-.r-blob{position:absolute;width:90%;aspect-ratio:1;background:radial-gradient(circle at 34% 28%,#FFA184 0%,#F2434D 48%,#A9121B 100%);
-  border-radius:42% 58% 63% 37% / 41% 44% 56% 59%;animation:morph 14s ease-in-out infinite alternate;box-shadow:inset 0 0 70px rgba(255,255,255,.18),0 40px 80px -40px rgba(60,0,8,.7)}
-.r-blob.two{width:40%;left:-2%;bottom:2%;background:radial-gradient(circle at 40% 30%,#FFD0C2,#FF7A6B 70%);opacity:.7;animation-duration:10s;animation-direction:alternate-reverse}
-@keyframes morph{0%{border-radius:42% 58% 63% 37% / 41% 44% 56% 59%;transform:rotate(0deg)}50%{border-radius:58% 42% 38% 62% / 55% 36% 64% 45%}100%{border-radius:36% 64% 52% 48% / 62% 50% 50% 38%;transform:rotate(14deg)}}
-.r-visual .phone{width:min(270px,62%);position:relative;z-index:2;animation:bob 6s ease-in-out infinite}
-@keyframes bob{0%,100%{transform:rotate(-6deg) translateY(0)}50%{transform:rotate(-3deg) translateY(-12px)}}
-.sticker{position:absolute;z-index:3;display:flex;align-items:center;gap:8px;max-width:180px;background:#fff;color:var(--red);font-weight:800;font-size:.92rem;line-height:1.2;padding:10px 14px;border-radius:18px 24px 16px 26px / 22px 16px 24px 18px;box-shadow:0 14px 28px -12px rgba(70,0,10,.55);animation:float 5s ease-in-out infinite}
-.sticker svg{width:18px;height:18px;flex:none}
-@keyframes float{0%,100%{transform:rotate(var(--r)) translateY(0)}50%{transform:rotate(var(--r)) translateY(-8px)}}
-.s2{--r:7deg;right:-6%;top:50%;animation-delay:-1.6s}
-.note{position:absolute;z-index:3;right:-12%;top:-7%;font-family:'Caveat',cursive;font-size:1.7rem;font-weight:700;line-height:1;color:#fff;transform:rotate(7deg)}
-.note svg{display:block;width:70px;height:50px;margin:2px 0 0 10px}
-@media (max-width:560px){.sticker{font-size:.78rem;max-width:132px;padding:8px 11px}.s1{left:-2%;top:12%}.s2{right:-3%}.s3{left:0;bottom:4%}.note{display:none}}
-.squig{position:relative;white-space:nowrap;display:inline-block}
-.squig svg{position:absolute;left:-2%;bottom:-.18em;width:104%;height:.38em;overflow:visible}
-.r-lead{margin-top:16px;color:#FFF4F4;font-size:1.12rem;max-width:40ch}
-.pebbles{list-style:none;padding:0;margin:28px 0 0;display:grid;gap:14px}
-.pebble{display:block;padding:16px 24px;border-radius:30px 46px 34px 48px / 46px 30px 48px 34px;transition:transform .3s ease}
-.pebble:nth-child(1){transform:rotate(-1.2deg)}
-.pebble:nth-child(2){transform:rotate(1deg);margin-left:clamp(0px,4vw,36px)}
-.pebble:nth-child(3){transform:rotate(-.6deg);margin-left:clamp(0px,1.5vw,14px)}
-.pebble:hover{transform:rotate(0) translateY(-3px)}
-.pebble .ic{width:54px;height:54px;background:#fff;color:var(--red);display:grid;place-items:center;border-radius:46% 54% 42% 58% / 55% 45% 55% 45%}
-.pebble .ic svg{width:26px;height:26px}
-.pebble h3{color:#fff;font-size:1.08rem}
-.pebble p{color:#FFF4F4;font-size:.93rem;margin-top:2px;line-height:1.45}
-.r-cta{margin-top:28px;display:flex;flex-wrap:wrap;gap:16px;align-items:center}
+.c-visual{position:relative;display:grid;place-items:center;margin-top:calc(-1 * clamp(40px,8vw,110px))}
+.c-visual::before{content:"";position:absolute;width:min(420px,92%);aspect-ratio:1;border-radius:50%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16)}
+.c-visual .phone{position:relative;width:min(270px,70%);transform:rotate(-4deg)}
+.c-copy h2{font-size:clamp(2.1rem,4.6vw,3.4rem);line-height:1.08}
+.c-lead{margin-top:16px;color:#FFF4F4;font-size:1.15rem;max-width:40ch}
+.c-points{list-style:none;padding:0;margin:30px 0 0;display:grid}
+.c-points li{padding:16px 0;border-top:1px solid rgba(255,255,255,.28)}
+.c-points li:last-child{border-bottom:1px solid rgba(255,255,255,.28)}
+.c-points b{display:block;font-size:1.1rem}
+.c-points span{color:#FFF4F4;font-size:1rem}
+.c-cta{margin-top:30px;display:flex;flex-wrap:wrap;align-items:center;gap:14px 20px}
 .btn-white{background:#fff;color:var(--red)}
 .btn-white:hover{background:#FFF4F4}
-.r-cta span{font-family:'Caveat',cursive;font-size:1.45rem;font-weight:700;color:#fff;transform:rotate(-3deg)}
 .earn-card{background:linear-gradient(135deg,#1F1F1F,#3A3A3A);color:#fff;border-radius:12px;padding:9px 10px;display:grid;gap:6px}
 .earn-card .r1{display:flex;justify-content:space-between;align-items:center;font-size:9px;opacity:.9}
 .earn-card .big{font-size:15px;font-weight:800;letter-spacing:.03em}
@@ -320,9 +299,7 @@ section{padding-block:clamp(64px,9vw,104px)}
 .join p.lead{margin-top:14px;color:var(--muted);max-width:46ch;font-size:1.08rem}
 .join .stores{margin-top:26px}
 .join-steps{list-style:none;margin:0;padding:0;display:grid;gap:14px;counter-reset:j}
-.join-steps li{display:grid;grid-template-columns:40px 1fr;gap:14px;align-items:center;counter-increment:j;font-size:1rem;font-weight:600;background:var(--red-soft);padding:14px 18px 14px 14px;border-radius:26px 40px 30px 42px / 40px 26px 42px 30px}
-.join-steps li:nth-child(odd){transform:rotate(-.8deg)}
-.join-steps li:nth-child(even){transform:rotate(.8deg);margin-left:clamp(0px,3vw,28px)}
+.join-steps li{display:grid;grid-template-columns:40px 1fr;gap:14px;align-items:center;counter-increment:j;font-size:1rem;font-weight:600;background:var(--red-soft);padding:14px 18px 14px 14px;border-radius:16px}
 .join-steps li::before{content:counter(j);width:40px;height:40px;font-size:1rem!important;border-radius:46% 54% 42% 58% / 55% 45% 55% 45%;background:var(--red);display:grid;place-items:center;font-weight:700;font-size:.85rem;color:#fff}
 .join-steps b{display:block}
 .join-steps small{color:var(--muted);font-size:.86rem}
@@ -398,7 +375,7 @@ footer .store b{font-size:.92rem}
     <a class="logo" href="#top" aria-label="Ridons home">Ridons</a>
     <nav class="nav" aria-label="Main">
       <a href="#how">How it works</a>
-      <a href="#drive">Drive &amp; earn</a>
+      <a href="#drive">For captains</a>
       <a href="#mission">Our mission</a>
       <a href="#faq">FAQs</a>
     </nav>
@@ -412,7 +389,7 @@ footer .store b{font-size:.92rem}
   </div>
   <nav class="mnav" id="mnav" aria-label="Mobile" hidden>
     <a href="#how">How it works</a>
-    <a href="#drive">Drive &amp; earn</a>
+    <a href="#drive">For captains</a>
     <a href="#mission">Our mission</a>
     <a href="#faq">FAQs</a>
     <a class="btn btn-red" href="#get-app">Get the app</a>
@@ -425,17 +402,17 @@ footer .store b{font-size:.92rem}
   <div class="wrap hero-grid">
     <div>
       <h1>Set your price.<br><em>Hop on. Go.</em></h1>
-      <p class="lead">Make an offer. A rider accepts. The price is locked.</p>
+      <p class="lead">Make an offer. A captain accepts. The price is locked.</p>
       <div class="stores" id="get-app">
-        <a class="store" href="#" data-store="android" aria-label="Google Play: coming soon"><svg aria-hidden="true" focusable="false"><use href="#i-dl"/></svg><span><small>Coming soon</small><b>Google Play</b></span></a>
-        <a class="store" href="#" data-store="ios" aria-label="App Store: coming soon"><svg aria-hidden="true" focusable="false"><use href="#i-dl"/></svg><span><small>Coming soon</small><b>App Store</b></span></a>
+        <a class="store" href="#" data-store="android" aria-label="Get it on Google Play"><svg aria-hidden="true" focusable="false"><use href="#gp"/></svg><span><small>Get it on</small><b>Google Play</b></span></a>
+        <a class="store" href="#" data-store="ios" aria-label="Download on the App Store"><svg aria-hidden="true" focusable="false"><use href="#ap"/></svg><span><small>Download on the</small><b>App Store</b></span></a>
       </div>
       <p class="hero-note"><span class="live-dot" aria-hidden="true"></span>Now live in Kigali · Cash or MoMo</p>
     </div>
 
     <div class="hero-phones" aria-hidden="true">
       <span class="blob" style="width:300px;height:300px;background:#FF9AA0;top:10%;right:10%;opacity:.5"></span>
-      <div class="agreed glass"><span class="t"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg></span><span><b>Price agreed</b><small>Locked in. Rider on the way.</small></span></div>
+      <div class="agreed glass"><span class="t"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg></span><span><b>Price agreed</b><small>Locked in. Captain on the way.</small></span></div>
       <div class="phone p-back">
         <div class="screen">
           <div class="status"><span>9:41</span><span>●●●</span></div>
@@ -479,7 +456,7 @@ footer .store b{font-size:.92rem}
     <div class="how-grid">
       <div class="feats">
         <div class="feat"><h3>Fair price, suggested</h3><p>Keep it or change it.</p></div>
-        <div class="feat"><h3>You pick your rider</h3><p>Name, photo and rating up front.</p></div>
+        <div class="feat"><h3>You pick your captain</h3><p>Name, photo and rating up front.</p></div>
       </div>
 
       <div class="demo">
@@ -500,7 +477,7 @@ footer .store b{font-size:.92rem}
     </div>
 
     <ul class="safe-row" aria-label="Safety on every ride">
-      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg>Verified riders</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg>Verified captains</li>
       <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg>See who's coming</li>
       <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 21s7-7.2 7-12a7 7 0 0 0-14 0c0 4.8 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>Share your trip</li>
       <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"/></svg>Ratings both ways</li>
@@ -508,15 +485,15 @@ footer .store b{font-size:.92rem}
   </div>
 </section>
 
-<!-- MISSION: why we exist, written for riders, passengers and funders alike -->
+<!-- MISSION: why we exist, written for captains, passengers and funders alike -->
 <section id="mission" class="mission">
   <div class="wrap m-grid">
     <div class="m-copy">
       <h2>Ridons leaves <em>no one behind.</em></h2>
-      <p>Cash rides leave no trace. Every Ridons ride builds a rider's financial future.</p>
+      <p>Cash rides leave no trace. Every Ridons ride builds a captain's financial future.</p>
     </div>
 
-    <div class="m-visual" role="img" aria-label="Illustration of a rider's Ridons record: fair rides and an income record are live, savings and protection are being built, access to credit is next.">
+    <div class="m-visual" role="img" aria-label="Illustration of a captain's Ridons record: fair rides and an income record are live, savings and protection are being built, access to credit is next.">
       <span class="orb" aria-hidden="true"></span>
       <span class="orb small" aria-hidden="true"></span>
       <div class="record glass" aria-hidden="true">
@@ -534,20 +511,10 @@ footer .store b{font-size:.92rem}
   </div>
 </section>
 
-<!-- RIDERS -->
+<!-- CAPTAINS -->
 <section id="drive" class="navy">
-  <svg class="road" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-    <path id="road-path" d="M-60 760 C 160 640, 300 820, 520 720 S 860 470, 1060 560 S 1360 380, 1520 240" fill="none" stroke="rgba(255,255,255,.4)" stroke-width="3" stroke-dasharray="1 16" stroke-linecap="round"/>
-    <g hidden>
-      <circle r="24" fill="#fff"/>
-      <g transform="translate(-13,-14) scale(1.1)" fill="none" stroke="#D0202A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="5.5" cy="17" r="3.5"/><circle cx="18.5" cy="17" r="3.5"/><path d="M5.5 17h6l3-7h3M14.5 10l-2-3H9"/></g>
-      <animateMotion dur="16s" repeatCount="indefinite"><mpath href="#road-path"/></animateMotion>
-    </g>
-  </svg>
   <div class="wrap earn">
-    <div class="r-visual">
-      <span class="r-blob" aria-hidden="true"></span>
-      <span class="r-blob two" aria-hidden="true"></span>
+    <div class="c-visual">
       <div class="phone" aria-hidden="true">
         <div class="screen">
           <div class="status"><span>9:41</span><span>●●●</span></div>
@@ -570,20 +537,17 @@ footer .store b{font-size:.92rem}
           </div>
         </div>
       </div>
-      <span class="sticker s2" aria-hidden="true">Your price</span>
-      <span class="note" aria-hidden="true">that's you, boss!<svg viewBox="0 0 70 50" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M60 4 C 50 30, 30 40, 8 38"/><path d="M16 30 L 8 38 L 17 44"/></svg></span>
     </div>
 
-    <div>
-      <h2>Earn more.<br>Keep <span class="squig">your price.<svg viewBox="0 0 200 16" preserveAspectRatio="none" aria-hidden="true"><path d="M2 10 C 20 2, 36 16, 54 9 S 88 2, 106 10 S 140 16, 158 8 S 186 4, 198 9" fill="none" stroke="#FFD2D4" stroke-width="4" stroke-linecap="round"/></svg></span></h2>
-      <p class="r-lead">Kigali runs on riders. Ridons runs for them.</p>
-      <ul class="pebbles">
-        <li class="pebble glass"><h3>You set the price</h3><p>Accept, counter or skip.</p></li>
-        <li class="pebble glass"><h3>Paid straight away</h3><p>Cash in hand or MoMo.</p></li>
-        <li class="pebble glass"><h3>Made for the stage</h3><p>Price agreed before you start.</p></li>
+    <div class="c-copy">
+      <h2>Your bike.<br>Your price.<br>Your business.</h2>
+      <p class="c-lead">You know Kigali's streets better than anyone. On Ridons, you decide what every ride is worth.</p>
+      <ul class="c-points">
+        <li><b>You set the price</b><span>Accept, counter or skip. Always your call.</span></li>
+        <li><b>You get paid straight away</b><span>Cash in hand, or MoMo to your phone.</span></li>
+        <li><b>You grow with every trip</b><span>Your earnings build a record that opens doors.</span></li>
       </ul>
-      <div class="r-cta"><a class="btn btn-white" href="#join">Join the crew</a></div>
-      <p class="illus" style="text-align:left;color:#FFF4F4;margin-top:16px">App screens are illustrations.</p>
+      <div class="c-cta"><a class="btn btn-white" href="#join">Become a captain</a><span class="illus" style="margin:0;color:#FFF4F4">App screen is an illustration.</span></div>
     </div>
   </div>
 </section>
@@ -592,11 +556,11 @@ footer .store b{font-size:.92rem}
 <section class="join" id="join">
   <div class="wrap join-grid">
     <div>
-      <h2>Got a moto? Join the crew.</h2>
-      <p class="lead">Sign up in minutes. Start earning.</p>
+      <h2>Become a Ridons captain.</h2>
+      <p class="lead">Got a moto? Sign up in minutes and start earning.</p>
       <div class="stores">
-        <a class="store" href="#" data-store="android" aria-label="Google Play: coming soon"><svg aria-hidden="true" focusable="false"><use href="#i-dl"/></svg><span><small>Coming soon</small><b>Google Play</b></span></a>
-        <a class="store" href="#" data-store="ios" aria-label="App Store: coming soon"><svg aria-hidden="true" focusable="false"><use href="#i-dl"/></svg><span><small>Coming soon</small><b>App Store</b></span></a>
+        <a class="store" href="#" data-store="android" aria-label="Get it on Google Play"><svg aria-hidden="true" focusable="false"><use href="#gp"/></svg><span><small>Get it on</small><b>Google Play</b></span></a>
+        <a class="store" href="#" data-store="ios" aria-label="Download on the App Store"><svg aria-hidden="true" focusable="false"><use href="#ap"/></svg><span><small>Download on the</small><b>App Store</b></span></a>
       </div>
     </div>
     <ol class="join-steps">
@@ -618,12 +582,12 @@ footer .store b{font-size:.92rem}
       <details><summary>Do I have to bargain every time?</summary><div class="a">No. Tap Confirm to use the suggested price.</div></details>
       <details><summary>Can I pay with cash?</summary><div class="a">Yes. Cash or MTN MoMo. You pay what you agreed.</div></details>
       <details><summary>Where does Ridons work?</summary><div class="a">Live in Kigali: Kimihurura, Remera and Nyarutarama, with more areas coming.</div></details>
-      <details><summary>Is it faster than walking to the stage?</summary><div class="a">Often. Your rider comes to you.</div></details>
-      <details><summary>How much does the rider keep?</summary><div class="a">Most of it. Ridons takes a small fee on finished trips.</div></details>
-      <details class="extra" hidden><summary>What if the rider asks for more?</summary><div class="a">Don't pay it. The agreed price is final. Report it in the app.</div></details>
-      <details class="extra" hidden><summary>Can I choose my rider?</summary><div class="a">Yes. You see every offer and pick one.</div></details>
-      <details class="extra" hidden><summary>I'm a rider. Can I skip a trip?</summary><div class="a">Anytime. Accept, counter or skip.</div></details>
-      <details class="extra" hidden><summary>I left something behind.</summary><div class="a">Tell us in the app or on WhatsApp. We'll contact your rider.</div></details>
+      <details><summary>Is it faster than walking to the stage?</summary><div class="a">Often. Your captain comes to you.</div></details>
+      <details><summary>How much does the captain keep?</summary><div class="a">Most of it. Ridons takes a small fee on finished trips.</div></details>
+      <details class="extra" hidden><summary>What if the captain asks for more?</summary><div class="a">Don't pay it. The agreed price is final. Report it in the app.</div></details>
+      <details class="extra" hidden><summary>Can I choose my captain?</summary><div class="a">Yes. You see every offer and pick one.</div></details>
+      <details class="extra" hidden><summary>I'm a captain. Can I skip a trip?</summary><div class="a">Anytime. Accept, counter or skip.</div></details>
+      <details class="extra" hidden><summary>I left something behind.</summary><div class="a">Tell us in the app or on WhatsApp. We'll contact your captain.</div></details>
       <details class="extra" hidden><summary>Is my data safe?</summary><div class="a">We keep only what we need and never sell it. See our <a href="privacy.html" style="color:var(--red);font-weight:600">Privacy Policy</a>.</div></details>
     </div>
     <button class="more" type="button" id="more">More questions</button>
@@ -658,8 +622,8 @@ footer .store b{font-size:.92rem}
         </div>
       </div>
       <div class="stores">
-        <a class="store" href="#" data-store="android" aria-label="Google Play: coming soon"><svg aria-hidden="true" focusable="false"><use href="#i-dl"/></svg><span><small>Coming soon</small><b>Google Play</b></span></a>
-        <a class="store" href="#" data-store="ios" aria-label="App Store: coming soon"><svg aria-hidden="true" focusable="false"><use href="#i-dl"/></svg><span><small>Coming soon</small><b>App Store</b></span></a>
+        <a class="store" href="#" data-store="android" aria-label="Get it on Google Play"><svg aria-hidden="true" focusable="false"><use href="#gp"/></svg><span><small>Get it on</small><b>Google Play</b></span></a>
+        <a class="store" href="#" data-store="ios" aria-label="Download on the App Store"><svg aria-hidden="true" focusable="false"><use href="#ap"/></svg><span><small>Download on the</small><b>App Store</b></span></a>
       </div>
     </div>
     <div class="f-base">
@@ -687,8 +651,6 @@ fetch('business.json').then(r => r.ok ? r.json() : null).then(biz => {
     if (!url) return;
     a.href = url; a.target = '_blank'; a.rel = 'noopener';
     a.removeAttribute('aria-disabled'); a.removeAttribute('role');
-    const small = a.querySelector('small');
-    small.textContent = a.dataset.store === 'ios' ? 'Download on the' : 'Get it on';
     a.setAttribute('aria-label', (a.dataset.store === 'ios' ? 'Download on the App Store' : 'Get it on Google Play'));
   });
   document.querySelectorAll('[data-biz]').forEach(el => { const v = biz[el.dataset.biz]; if (v) el.textContent = v; });
@@ -717,10 +679,10 @@ document.getElementById('more').addEventListener('click', e => {
   e.currentTarget.hidden = true;
 });
 
-/* Demo phone: set a price, get offers, pick a rider */
+/* Demo phone: set a price, get offers, pick a captain */
 const sheet = document.getElementById('demo-sheet');
 const fmt = n => n.toLocaleString('en-US');
-const RIDERS = [
+const CAPTAINS = [
   { name: 'Jean Bosco', init: 'JB', color: '#2F6FDE', rating: '4.9', plate: 'RF 482 C', eta: 2 },
   { name: 'Eric N.', init: 'EN', color: '#C9822B', rating: '4.8', plate: 'RAD 123 B', eta: 1 },
   { name: 'Claudine U.', init: 'CU', color: '#7C5CBF', rating: '5.0', plate: 'RC 907 A', eta: 3 }
@@ -754,14 +716,14 @@ function stepPrice(){
 function stepOffers(){
   sheet.innerHTML = `
     <div class="sheet-row"><h4>Offers for you</h4><span class="hint">You offered ${fmt(price)}</span></div>
-    <span class="hint">Tap the rider you want</span>
+    <span class="hint">Tap the captain you want</span>
     <div class="line-red"></div>
     <div class="offers" id="d-offers"></div>
     <button type="button" class="p-btn ghost" id="d-back">Change my price</button>
     ${tabbar}`;
   document.getElementById('d-back').onclick = stepPrice;
   const box = document.getElementById('d-offers');
-  RIDERS.forEach((r, i) => setTimeout(() => {
+  CAPTAINS.forEach((r, i) => setTimeout(() => {
     if (!box.isConnected) return;
     const amt = replyFrom(i), ok = amt === price;
     const b = document.createElement('button');
@@ -785,5 +747,4 @@ function stepDone(r, amt){
   document.getElementById('d-again').onclick = () => { price = 1900; stepPrice(); };
 }
 stepPrice();
-if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) document.querySelector('.road')?.pauseAnimations();
 </script>
