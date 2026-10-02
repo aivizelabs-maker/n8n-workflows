@@ -2,7 +2,7 @@
 <meta name="description" content="Set your price, pick your rider, ride. Moto rides in Kigali with no haggling and no drama. Cash or MoMo.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800&family=Caveat:wght@600;700&display=swap">
 <style>
 /* Layout: follows the Figma draft. Bold Ridons-red hero, rider band and footer; white sections between.
    One look on every device (no dark variant), on purpose. Hero with app screens, "how it works" built around
@@ -242,24 +242,49 @@ section{padding-block:clamp(64px,9vw,104px)}
 .partner-cta small b{color:#fff;user-select:all}
 
 /* navy rider band */
-.navy{background:var(--red);color:#fff;background-image:radial-gradient(circle, rgba(255,255,255,.08) 1px, transparent 1.5px);background-size:22px 22px}
-.navy{position:relative;overflow-x:clip;padding-top:clamp(20px,3vw,40px);padding-bottom:clamp(130px,14vw,180px)}
+/* riders band: playful and organic. Morphing blob, bobbing stickers, a road that winds through it. */
+.navy{position:relative;overflow-x:clip;color:#fff;padding-top:clamp(20px,3vw,40px);padding-bottom:clamp(140px,15vw,190px);
+  background:radial-gradient(70% 60% at 20% 30%,#E8323C 0%,transparent 70%),radial-gradient(60% 60% at 85% 70%,#B0141D 0%,transparent 70%),var(--red)}
 .navy::after{content:"";position:absolute;left:-5%;right:-5%;bottom:-1px;height:clamp(60px,8vw,110px);background:var(--bg);z-index:1;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 120' preserveAspectRatio='none'%3E%3Cpath d='M0 0 C 300 20 500 110 820 90 C 1100 72 1300 30 1440 50 L1440 120 L0 120 Z'/%3E%3C/svg%3E") center/100% 100% no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 120' preserveAspectRatio='none'%3E%3Cpath d='M0 0 C 300 20 500 110 820 90 C 1100 72 1300 30 1440 50 L1440 120 L0 120 Z'/%3E%3C/svg%3E") center/100% 100% no-repeat}
 .navy .wrap{position:relative;z-index:1}
 .navy .pill{background:rgba(255,255,255,.16);color:#fff;border-color:rgba(255,255,255,.4)}
-.earn{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(36px,6vw,80px);align-items:center}
+.road{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+.earn{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,80px);align-items:center}
 .earn > *{min-width:0}
 @media (max-width:900px){.earn{grid-template-columns:1fr}}
-.earn .phone{width:280px;margin-inline:auto;transform:rotate(-6deg);margin-top:calc(-1 * clamp(60px,9vw,130px));position:relative;z-index:2}
-@media (max-width:900px){.earn .phone{margin-top:-70px}}
-.earn-list{margin-top:26px;display:grid}
-.earn-list .feat{padding-block:18px;border-bottom:1px solid rgba(255,255,255,.25)}
-.earn-list .feat:last-child{border-bottom:0}
-.earn-list .chk{color:#fff}
-.earn-list p{color:#FFE3E4}
-.keep{margin-top:22px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-@media (max-width:520px){.keep{grid-template-columns:1fr}}
-.keep div{border-radius:16px;padding:14px 16px;font-weight:700;font-size:.98rem;line-height:1.35}
+.r-visual{position:relative;display:grid;place-items:center;width:100%;max-width:480px;margin-inline:auto;aspect-ratio:1/1.05;margin-top:calc(-1 * clamp(40px,8vw,120px))}
+.r-blob{position:absolute;width:90%;aspect-ratio:1;background:radial-gradient(circle at 34% 28%,#FFA184 0%,#F2434D 48%,#A9121B 100%);
+  border-radius:42% 58% 63% 37% / 41% 44% 56% 59%;animation:morph 14s ease-in-out infinite alternate;box-shadow:inset 0 0 70px rgba(255,255,255,.18),0 40px 80px -40px rgba(60,0,8,.7)}
+.r-blob.two{width:40%;left:-2%;bottom:2%;background:radial-gradient(circle at 40% 30%,#FFD0C2,#FF7A6B 70%);opacity:.7;animation-duration:10s;animation-direction:alternate-reverse}
+@keyframes morph{0%{border-radius:42% 58% 63% 37% / 41% 44% 56% 59%;transform:rotate(0deg)}50%{border-radius:58% 42% 38% 62% / 55% 36% 64% 45%}100%{border-radius:36% 64% 52% 48% / 62% 50% 50% 38%;transform:rotate(14deg)}}
+.r-visual .phone{width:min(270px,62%);position:relative;z-index:2;animation:bob 6s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:rotate(-6deg) translateY(0)}50%{transform:rotate(-3deg) translateY(-12px)}}
+.sticker{position:absolute;z-index:3;display:flex;align-items:center;gap:8px;max-width:180px;background:#fff;color:var(--red);font-weight:800;font-size:.92rem;line-height:1.2;padding:10px 14px;border-radius:18px 24px 16px 26px / 22px 16px 24px 18px;box-shadow:0 14px 28px -12px rgba(70,0,10,.55);animation:float 5s ease-in-out infinite}
+.sticker svg{width:18px;height:18px;flex:none}
+@keyframes float{0%,100%{transform:rotate(var(--r)) translateY(0)}50%{transform:rotate(var(--r)) translateY(-8px)}}
+.s1{--r:-8deg;left:-9%;top:26%}
+.s2{--r:7deg;right:-6%;top:50%;animation-delay:-1.6s}
+.s3{--r:-4deg;left:2%;bottom:8%;animation-delay:-3.2s;background:#1F1F1F;color:#fff}
+.note{position:absolute;z-index:3;right:-12%;top:-7%;font-family:'Caveat',cursive;font-size:1.7rem;font-weight:700;line-height:1;color:#fff;transform:rotate(7deg)}
+.note svg{display:block;width:70px;height:50px;margin:2px 0 0 10px}
+@media (max-width:560px){.sticker{font-size:.78rem;max-width:132px;padding:8px 11px}.s1{left:-2%;top:12%}.s2{right:-3%}.s3{left:0;bottom:4%}.note{display:none}}
+.squig{position:relative;white-space:nowrap;display:inline-block}
+.squig svg{position:absolute;left:-2%;bottom:-.18em;width:104%;height:.38em;overflow:visible}
+.r-lead{margin-top:16px;color:#FFE3E4;font-size:1.12rem;max-width:40ch}
+.pebbles{list-style:none;padding:0;margin:28px 0 0;display:grid;gap:14px}
+.pebble{display:grid;grid-template-columns:54px 1fr;gap:14px;align-items:center;padding:16px 20px 16px 16px;border-radius:30px 46px 34px 48px / 46px 30px 48px 34px;transition:transform .3s ease}
+.pebble:nth-child(1){transform:rotate(-1.2deg)}
+.pebble:nth-child(2){transform:rotate(1deg);margin-left:clamp(0px,4vw,36px)}
+.pebble:nth-child(3){transform:rotate(-.6deg);margin-left:clamp(0px,1.5vw,14px)}
+.pebble:hover{transform:rotate(0) translateY(-3px)}
+.pebble .ic{width:54px;height:54px;background:#fff;color:var(--red);display:grid;place-items:center;border-radius:46% 54% 42% 58% / 55% 45% 55% 45%}
+.pebble .ic svg{width:26px;height:26px}
+.pebble h3{color:#fff;font-size:1.08rem}
+.pebble p{color:#FFE3E4;font-size:.93rem;margin-top:2px;line-height:1.45}
+.r-cta{margin-top:28px;display:flex;flex-wrap:wrap;gap:16px;align-items:center}
+.btn-white{background:#fff;color:var(--red)}
+.btn-white:hover{background:#FFE3E4}
+.r-cta span{font-family:'Caveat',cursive;font-size:1.45rem;font-weight:700;color:#fff;transform:rotate(-3deg)}
 .earn-card{background:linear-gradient(135deg,#1F1F1F,#3A3A3A);color:#fff;border-radius:12px;padding:9px 10px;display:grid;gap:6px}
 .earn-card .r1{display:flex;justify-content:space-between;align-items:center;font-size:9px;opacity:.9}
 .earn-card .big{font-size:15px;font-weight:800;letter-spacing:.03em}
@@ -283,9 +308,11 @@ section{padding-block:clamp(64px,9vw,104px)}
 @media (max-width:900px){.join-grid{grid-template-columns:1fr}}
 .join p.lead{margin-top:14px;color:var(--muted);max-width:46ch;font-size:1.08rem}
 .join .stores{margin-top:26px}
-.join-steps{list-style:none;margin:0;padding:22px;display:grid;gap:16px;background:var(--bg-2);border:1px solid var(--line);border-radius:18px;counter-reset:j}
-.join-steps li{display:grid;grid-template-columns:30px 1fr;gap:12px;counter-increment:j;font-size:.95rem}
-.join-steps li::before{content:counter(j);width:30px;height:30px;border-radius:50%;background:var(--red);display:grid;place-items:center;font-weight:700;font-size:.85rem;color:#fff}
+.join-steps{list-style:none;margin:0;padding:0;display:grid;gap:14px;counter-reset:j}
+.join-steps li{display:grid;grid-template-columns:40px 1fr;gap:14px;align-items:center;counter-increment:j;font-size:.95rem;background:var(--red-soft);padding:14px 18px 14px 14px;border-radius:26px 40px 30px 42px / 40px 26px 42px 30px}
+.join-steps li:nth-child(odd){transform:rotate(-.8deg)}
+.join-steps li:nth-child(even){transform:rotate(.8deg);margin-left:clamp(0px,3vw,28px)}
+.join-steps li::before{content:counter(j);width:40px;height:40px;font-size:1rem!important;border-radius:46% 54% 42% 58% / 55% 45% 55% 45%;background:var(--red);display:grid;place-items:center;font-weight:700;font-size:.85rem;color:#fff}
 .join-steps b{display:block}
 .join-steps small{color:var(--muted);font-size:.86rem}
 
@@ -506,46 +533,56 @@ footer .store b{font-size:.92rem}
 
 <!-- RIDERS -->
 <section id="drive" class="navy">
-  <div class="glow" aria-hidden="true"><span class="blob" style="width:420px;height:420px;background:#FF7A5C;top:10%;right:6%;opacity:.55" aria-hidden="true"></span>
-  <span class="blob" style="width:360px;height:360px;background:#6A0814;bottom:0;left:-60px;opacity:.55" aria-hidden="true"></span>
-  <span class="blob" style="width:240px;height:240px;background:#FFC2C5;top:55%;right:34%;opacity:.35"></span></div>
+  <svg class="road" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <path id="road-path" d="M-60 760 C 160 640, 300 820, 520 720 S 860 470, 1060 560 S 1360 380, 1520 240" fill="none" stroke="rgba(255,255,255,.4)" stroke-width="3" stroke-dasharray="1 16" stroke-linecap="round"/>
+    <g>
+      <circle r="24" fill="#fff"/>
+      <g transform="translate(-13,-14) scale(1.1)" fill="none" stroke="#D0202A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="5.5" cy="17" r="3.5"/><circle cx="18.5" cy="17" r="3.5"/><path d="M5.5 17h6l3-7h3M14.5 10l-2-3H9"/></g>
+      <animateMotion dur="16s" repeatCount="indefinite"><mpath href="#road-path"/></animateMotion>
+    </g>
+  </svg>
   <div class="wrap earn">
-    <div class="phone" aria-hidden="true">
-      <div class="screen">
-        <div class="status"><span>9:41</span><span>●●●</span></div>
-        <div style="padding:8px 12px 0;display:flex;flex-direction:column;gap:9px;flex:1;min-height:0">
-          <div class="prof"><span class="av">EN</span><div><b>Eric Nshimiyimana</b><small>RAD 123 B · ★ 4.8</small></div></div>
-          <div class="earn-card">
-            <div class="r1"><span>RWF earned today</span><span style="display:flex;align-items:center;gap:5px">Online <i class="toggle"></i></span></div>
-            <div class="big num">24,840</div>
-            <div class="r2"><span>Rating<b>4.8</b></span><span>Trips<b>312</b></span><span>Level<b>Pro</b></span></div>
+    <div class="r-visual">
+      <span class="r-blob" aria-hidden="true"></span>
+      <span class="r-blob two" aria-hidden="true"></span>
+      <div class="phone" aria-hidden="true">
+        <div class="screen">
+          <div class="status"><span>9:41</span><span>●●●</span></div>
+          <div style="padding:8px 12px 0;display:flex;flex-direction:column;gap:9px;flex:1;min-height:0">
+            <div class="prof"><span class="av">EN</span><div><b>Eric Nshimiyimana</b><small>RAD 123 B · ★ 4.8</small></div></div>
+            <div class="earn-card">
+              <div class="r1"><span>RWF earned today</span><span style="display:flex;align-items:center;gap:5px">Online <i class="toggle"></i></span></div>
+              <div class="big num">24,840</div>
+              <div class="r2"><span>Rating<b>4.8</b></span><span>Trips<b>312</b></span><span>Level<b>Pro</b></span></div>
+            </div>
+            <h4 style="margin:2px 0 0;font-size:12px">Available offers</h4>
+            <div class="ride-card">
+              <div class="prof"><span class="av" style="background:#7C5CBF">AU</span><div style="flex:1"><b>Amina Umurerwa</b><small>★ 4.9 · 600 m away</small></div><span style="color:var(--red);font-weight:700;font-size:10px">1:00</span></div>
+              <div class="hint"><b style="color:var(--red)">Nyarutarama</b> → Remera Bus Park</div>
+              <div class="two"><span>Passenger offer<b>1,900 RWF</b></span><span style="text-align:right">Usual price<b>2,000 RWF</b></span></div>
+              <div class="fare"><button tabindex="-1">−</button><output class="num">1,900<small>RWF</small></output><button tabindex="-1">+</button></div>
+              <div class="btn2"><span class="p-btn ghost">Counter</span><span class="p-btn">Accept</span></div>
+            </div>
+            <div class="tabbar four"><span class="on"><svg><use href="#i-home"/></svg>Home</span><span><svg><use href="#i-earn"/></svg>Earnings</span><span><svg><use href="#i-act"/></svg>Activities</span><span><svg><use href="#i-acc"/></svg>Account</span></div>
           </div>
-          <h4 style="margin:2px 0 0;font-size:12px">Available offers</h4>
-          <div class="ride-card">
-            <div class="prof"><span class="av" style="background:#7C5CBF">AU</span><div style="flex:1"><b>Amina Umurerwa</b><small>★ 4.9 · 600 m away</small></div><span style="color:var(--red);font-weight:700;font-size:10px">1:00</span></div>
-            <div class="hint"><b style="color:var(--red)">Nyarutarama</b> → Remera Bus Park</div>
-            <div class="two"><span>Passenger offer<b>1,900 RWF</b></span><span style="text-align:right">Usual price<b>2,000 RWF</b></span></div>
-            <div class="fare"><button tabindex="-1">−</button><output class="num">1,900<small>RWF</small></output><button tabindex="-1">+</button></div>
-            <div class="btn2"><span class="p-btn ghost">Counter</span><span class="p-btn">Accept</span></div>
-          </div>
-          <div class="tabbar four"><span class="on"><svg><use href="#i-home"/></svg>Home</span><span><svg><use href="#i-earn"/></svg>Earnings</span><span><svg><use href="#i-act"/></svg>Activities</span><span><svg><use href="#i-acc"/></svg>Account</span></div>
         </div>
       </div>
+      <span class="sticker s1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 6.5c-1-1.5-2.8-2.5-5-2.5-2.8 0-4.5 1.5-4.5 3.5 0 4.5 10 2.5 10 7.5 0 2-2 3.5-5 3.5-2.4 0-4.4-1-5.5-2.8"/></svg>Keep most of every fare</span>
+      <span class="sticker s2" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg>Paid fast</span>
+      <span class="sticker s3" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg>Your bike, your rules</span>
+      <span class="note" aria-hidden="true">that's you, boss!<svg viewBox="0 0 70 50" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M60 4 C 50 30, 30 40, 8 38"/><path d="M16 30 L 8 38 L 17 44"/></svg></span>
     </div>
 
     <div>
       <span class="pill">For riders</span>
-      <h2 style="margin-top:14px">Earn more.<br>Keep your price.</h2>
-      <div class="earn-list">
-        <div class="feat"><svg class="chk" aria-hidden="true"><use href="#chk"/></svg><div><h3>You set the price</h3><p>You know the streets and the traffic. See the offer, then accept or counter. No algorithm deciding for you.</p></div></div>
-        <div class="feat"><svg class="chk" aria-hidden="true"><use href="#chk"/></svg><div><h3>Get paid fast</h3><p>Cash goes straight into your hand, and MoMo straight into your MTN wallet. No waiting for payday.</p></div></div>
-        <div class="feat"><svg class="chk" aria-hidden="true"><use href="#chk"/></svg><div><h3>Built for the stage</h3><p>Passengers come to you already agreed on the price. Start the engine and go.</p></div></div>
-      </div>
-      <div class="keep">
-        <div class="glass">Keep most of every fare</div>
-        <div class="glass">Small fee, only on finished trips</div>
-        <div class="glass">No one pushes your price too low</div>
-      </div>
+      <h2 style="margin-top:14px">Earn more.<br>Keep <span class="squig">your price.<svg viewBox="0 0 200 16" preserveAspectRatio="none" aria-hidden="true"><path d="M2 10 C 20 2, 36 16, 54 9 S 88 2, 106 10 S 140 16, 158 8 S 186 4, 198 9" fill="none" stroke="#FFD2D4" stroke-width="4" stroke-linecap="round"/></svg></span></h2>
+      <p class="r-lead">Kigali runs on riders. Ridons runs for them.</p>
+      <ul class="pebbles">
+        <li class="pebble glass"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0L3 13V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg></span><div><h3>You call the price</h3><p>You know the streets. Accept or counter. No algorithm bossing you around.</p></div></li>
+        <li class="pebble glass"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="13" rx="3"/><path d="M16 12.5h2"/><path d="M2 10h20"/></svg></span><div><h3>Money in, fast</h3><p>Cash in hand, MoMo straight to your wallet. No waiting for payday.</p></div></li>
+        <li class="pebble glass"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="5.5" cy="17" r="3.5"/><circle cx="18.5" cy="17" r="3.5"/><path d="M5.5 17h6l3-7h3M14.5 10l-2-3H9"/></svg></span><div><h3>Made for the stage</h3><p>Passengers arrive already agreed on the price. Kick-start and go.</p></div></li>
+      </ul>
+      <div class="r-cta"><a class="btn btn-white" href="#join">Join the crew</a><span>it only takes a few minutes</span></div>
     </div>
   </div>
 </section>
@@ -728,4 +765,5 @@ function stepDone(r, amt){
   document.getElementById('d-again').onclick = () => { price = 1900; stepPrice(); };
 }
 stepPrice();
+if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) document.querySelector('.road')?.pauseAnimations();
 </script>
