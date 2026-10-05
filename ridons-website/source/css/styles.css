@@ -415,5 +415,11 @@ footer .store b{font-size:.92rem}
 .m-top .m-copy > p:not(.m-ask){max-width:56ch}
 .d-col .d-ic{color:var(--red)}
 .asks .a-ic{color:#fff}
+.m-impact{list-style:none;padding:0;margin:0;display:grid}
+.m-impact li{padding:14px 0;border-top:1px solid var(--line);display:grid;gap:2px}
+.m-impact small{font-size:.75rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--red)}
+.m-impact b{font-size:1.05rem;line-height:1.35}
+.m-impact span{color:var(--muted);font-size:.95rem}
+.m-impact .m-src{font-size:.78rem;color:var(--muted);padding-top:12px}
 body{margin:0}
 img{max-width:100%}

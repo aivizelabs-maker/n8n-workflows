@@ -32,7 +32,7 @@ from this folder, then open http://localhost:8000.
 2. Hero ("Agree the price. Ride. Build a record.")
 3. How it works (five steps + interactive demo phone)
 4. Safety
-5. Mission ("Every trip builds a record. Every record opens a door.") with key numbers and the "one record, many doors" diagram
+5. Mission ("Every trip builds a record. Every record opens a door.") with the impact we work toward (financial inclusion, decent work, road safety, cleaner transport) and the "one record, many doors" diagram
 6. For motari (with the motari photo)
 7. Become a Ridons motari
 8. Partners ("Others sell rides. We build records.") with the five-phase plan and what we ask of partners
