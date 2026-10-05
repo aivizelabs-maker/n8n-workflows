@@ -23,20 +23,21 @@ from this folder, then open http://localhost:8000.
 | `js/main.js` | Store buttons, mobile menu, FAQ "More questions", and the interactive price demo |
 | `business.json` | Company details, store links and social links. Edit here, not in the HTML. Empty values stay hidden |
 | `privacy.html`, `terms.html`, `cookies.html`, `refunds.html` | Policy pages (share `legal.css`) |
-| `assets/` | Logo, icon and favicon as vector SVGs |
+| `assets/` | Logo, icon and favicon as vector SVGs, and the motari photo (`motari.jpg`) |
 | `404.html` | "Page not found" page for hosting |
 
 ## Page sections (in order, in `index.html`)
 
 1. Header
-2. Hero ("Set your price. Hop on. Go.")
-3. How it works (four steps + interactive demo phone)
+2. Hero ("Agree the price. Ride. Build a record.")
+3. How it works (five steps + interactive demo phone)
 4. Safety
-5. Mission ("Ridons leaves no one behind")
-6. For motari
+5. Mission ("Every trip builds a record. Every record opens a door.") with key numbers and the "one record, many doors" diagram
+6. For motari (with the motari photo)
 7. Become a Ridons motari
-8. FAQ
-9. Footer (partner card, links)
+8. Partners ("Others sell rides. We build records.") with the five-phase plan and what we ask of partners
+9. FAQ
+10. Footer
 
 Each section starts with an HTML comment such as `<!-- SAFETY -->`, so they're easy to find.
 

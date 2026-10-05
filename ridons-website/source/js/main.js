@@ -107,6 +107,7 @@ function stepOffers(){
 
 function stepDone(r, amt){
   setStep(4);
+  clearTimeout(window.__recT); window.__recT = setTimeout(() => { if (sheet.querySelector('.done')) setStep(5); }, 1600);
   sheet.innerHTML = `
     <div class="done">
       <span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg></span>

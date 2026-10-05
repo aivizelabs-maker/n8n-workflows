@@ -1,6 +1,6 @@
 <meta charset="utf-8">
 <title>Ridons</title>
-<meta name="description" content="Now live in Kigali. Agree the price before you ride, pick your motari, and pay by cash or MoMo. Moto rides in Kimihurura, Remera and Nyarutarama.">
+<meta name="description" content="Agree the price, ride, build a record. Moto rides in Kigali with a fair, agreed fare, and every trip builds the motari's verified work record.">
 <meta property="og:title" content="Ridons">
 <meta property="og:description" content="Now live in Kigali. Agree the price before you ride. Cash or MoMo.">
 <meta property="og:type" content="website">
@@ -232,7 +232,7 @@ section{padding-block:clamp(64px,9vw,104px)}
 
 /* mission: white melts into red at the bottom and runs straight into the motari band */
 .mission{position:relative;overflow:hidden;padding-top:clamp(24px,4vw,48px);padding-bottom:clamp(150px,16vw,220px);
-  background:linear-gradient(180deg,var(--bg) 0%,var(--bg) 58%,#FCE4E5 74%,#F2A6AA 88%,var(--red) 100%)}
+  background:linear-gradient(180deg,var(--bg) 0,var(--bg) calc(100% - 240px),#FCE4E5 calc(100% - 170px),#F2A6AA calc(100% - 85px),var(--red) 100%)}
 .mission .wrap{position:relative;z-index:1}
 .m-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,88px);align-items:center}
 .m-grid > *{min-width:0}
@@ -291,7 +291,8 @@ section{padding-block:clamp(64px,9vw,104px)}
 @media (max-width:900px){.earn{grid-template-columns:1fr}.c-copy{order:-1}.c-visual{margin-top:0}}
 .c-visual{position:relative;display:grid;place-items:center;margin-top:calc(-1 * clamp(40px,8vw,110px))}
 .c-visual::before{content:"";position:absolute;width:min(420px,92%);aspect-ratio:1;border-radius:50%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16)}
-.c-visual .phone{position:relative;width:min(270px,70%);transform:rotate(-4deg)}
+.c-photo{position:relative;margin:0;width:min(380px,82%);aspect-ratio:4/5;border-radius:28px;overflow:hidden;border:6px solid rgba(255,255,255,.2);box-shadow:0 40px 80px -40px rgba(60,0,8,.75);transform:rotate(-2deg)}
+.c-photo img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 28%}
 .c-copy .kicker{margin-bottom:8px}
 .c-who{font-size:1.15rem;font-weight:600;color:#FFF4F4;margin:0 0 18px}
 .c-copy h2{font-size:clamp(2.1rem,4.6vw,3.4rem);line-height:1.08}
@@ -355,7 +356,7 @@ section{padding-block:clamp(64px,9vw,104px)}
 .contact b{color:var(--fg);user-select:all;white-space:nowrap}
 
 /* footer */
-footer{position:relative;overflow-x:clip;background:radial-gradient(120% 140% at 50% 0%,#B81922 0%,#AC141D 60%,#9C111A 100%);color:#FFFFFF;padding-block:0 28px;font-size:.88rem;margin-top:clamp(90px,10vw,120px);border-radius:clamp(36px,6vw,80px) clamp(36px,6vw,80px) 0 0}
+footer{position:relative;overflow-x:clip;background:radial-gradient(120% 140% at 50% 0%,#B0161F 0%,#A8131C 60%,#9A1019 100%);color:#FFFFFF;padding-block:0 28px;font-size:.88rem;margin-top:clamp(90px,10vw,120px);border-radius:clamp(36px,6vw,80px) clamp(36px,6vw,80px) 0 0}
 footer .wrap{position:relative;z-index:1}
 .f-top{margin-top:calc(-1 * clamp(40px,5vw,60px))}
 .f-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:20px;padding-bottom:26px;border-bottom:1px solid rgba(255,255,255,.3)}
@@ -374,6 +375,60 @@ footer .store b{font-size:.92rem}
 .f-base a{color:#fff;text-decoration:underline;text-underline-offset:3px}
 .f-base a{text-decoration:none}
 .f-base a:hover{color:#fff;text-decoration:underline}
+
+/* mission: one record, many doors */
+.m-top{display:grid;grid-template-columns:1.25fr .75fr;gap:clamp(32px,6vw,88px);align-items:center}
+.m-top > *{min-width:0}
+@media (max-width:900px){.m-top{grid-template-columns:1fr}}
+.m-stats{list-style:none;padding:0;margin:0;display:grid}
+.m-stats li{padding:16px 0;border-top:1px solid var(--line)}
+.m-stats b{display:block;font-size:clamp(2rem,4vw,2.7rem);font-weight:800;letter-spacing:-.02em;line-height:1.05;color:var(--red)}
+.m-stats span{color:var(--muted)}
+.m-stats .m-src{font-size:.8rem;color:var(--muted);padding-top:12px}
+.doors{margin-top:clamp(48px,6vw,80px);display:grid;grid-template-columns:1fr auto 1fr;gap:clamp(20px,4vw,56px);align-items:center}
+.doors > *{min-width:0}
+.d-col{list-style:none;padding:0;margin:0;display:grid;gap:14px}
+.d-col li{display:flex;gap:14px;align-items:center;background:var(--bg-2);border-radius:16px;padding:14px 16px}
+.d-ic{width:44px;height:44px;border-radius:50%;background:var(--red-soft);color:var(--red);display:grid;place-items:center;flex:none}
+.d-ic svg{width:22px;height:22px}
+.d-col b{display:block;font-size:1.02rem}
+.d-col span{color:var(--muted);font-size:.93rem}
+.d-hub{position:relative;width:230px;aspect-ratio:1;display:grid;place-items:center}
+.d-ring{position:absolute;inset:-16px;border-radius:50%;border:2px dashed var(--red-line)}
+.d-core{width:100%;height:100%;border-radius:50%;background:radial-gradient(circle at 35% 30%,#D92630,#A9121B);color:#fff;display:grid;place-content:center;text-align:center;padding:28px;box-shadow:0 30px 60px -28px rgba(208,32,42,.6)}
+.d-core b{font-size:1.2rem;line-height:1.2}
+.d-core span{font-size:.88rem;color:#FFF4F4;margin-top:6px}
+@media (max-width:900px){.doors{grid-template-columns:1fr}.d-hub{order:-1;justify-self:center;width:190px;margin:16px 0}}
+.consent{margin-top:28px;text-align:center;color:#4B5563;font-size:.95rem}
+.consent b{color:var(--red)}
+.sf-sub{text-align:center;color:var(--muted);margin-top:10px;font-size:1.05rem}
+
+/* partners */
+.partners{border-top:1px solid var(--line)}
+.p-head{display:grid;gap:12px;justify-items:center;text-align:center;margin-bottom:clamp(32px,5vw,48px)}
+.p-head h2 em{font-style:normal;color:var(--red)}
+.phases{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.phases li{border:1px solid var(--line);border-radius:16px;padding:16px;display:grid;gap:4px;align-content:start}
+.phases small{font-size:.72rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--red)}
+.phases b{font-size:1.05rem}
+.phases span{color:var(--muted);font-size:.9rem}
+.phases li.now{background:var(--red);border-color:var(--red);color:#fff}
+.phases li.now small,.phases li.now span{color:#FFF4F4}
+@media (max-width:900px){.phases{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.phases{grid-template-columns:1fr}}
+.asks{list-style:none;padding:0;margin:clamp(24px,4vw,36px) 0 0;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media (max-width:700px){.asks{grid-template-columns:1fr}}
+.asks li{display:flex;gap:14px;align-items:flex-start;background:var(--red-soft);border-radius:16px;padding:18px}
+.a-ic{width:44px;height:44px;border-radius:50%;background:var(--red);color:#fff;display:grid;place-items:center;flex:none}
+.a-ic svg{width:22px;height:22px}
+.asks b{display:block;font-size:1.05rem}
+.asks span{color:var(--muted);font-size:.95rem}
+.p-foot{margin-top:28px;padding-top:24px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:16px 24px;align-items:center;justify-content:space-between}
+.p-foot p{color:var(--muted);max-width:62ch}
+.m-top .m-copy h2{font-size:clamp(2rem,3.6vw,3rem);line-height:1.08}
+.m-top .m-copy > p:not(.m-ask){max-width:56ch}
+.d-col .d-ic{color:var(--red)}
+.asks .a-ic{color:#fff}
 </style>
 
 <!-- shared drawings reused across the page -->
@@ -414,8 +469,9 @@ footer .store b{font-size:.92rem}
     <nav class="nav" aria-label="Main">
       <a href="#how">How it works</a>
       <a href="#safety">Safety</a>
-      <a href="#drive">For motari</a>
       <a href="#mission">Our mission</a>
+      <a href="#drive">For motari</a>
+      <a href="#partners">Partners</a>
       <a href="#faq">FAQs</a>
     </nav>
     <div class="top-right">
@@ -429,8 +485,9 @@ footer .store b{font-size:.92rem}
   <nav class="mnav" id="mnav" aria-label="Mobile" hidden>
     <a href="#how">How it works</a>
     <a href="#safety">Safety</a>
-    <a href="#drive">For motari</a>
     <a href="#mission">Our mission</a>
+    <a href="#drive">For motari</a>
+    <a href="#partners">Partners</a>
     <a href="#faq">FAQs</a>
     <a class="btn btn-red" href="#get-app">Get the app</a>
   </nav>
@@ -442,13 +499,13 @@ footer .store b{font-size:.92rem}
   <div class="wrap hero-grid">
     <div>
       <p class="kicker">Moto rides in Kigali</p>
-      <h1>Set your price.<br><em>Hop on. Go.</em></h1>
-      <p class="lead">Make an offer. A motari accepts. The price is locked, and your moto is on its way.</p>
+      <h1>Agree the price.<br><em>Ride. Build a record.</em></h1>
+      <p class="lead">Make an offer and a motari accepts. The fare is locked before you ride, and every trip builds your motari's verified work record.</p>
       <div class="stores" id="get-app">
         <a class="store" href="#" data-store="android" aria-label="Google Play"><svg aria-hidden="true" focusable="false"><use href="#gp"/></svg><b>Google Play</b></a>
         <a class="store" href="#" data-store="ios" aria-label="App Store"><svg aria-hidden="true" focusable="false"><use href="#ap"/></svg><b>App Store</b></a>
       </div>
-      <p class="hero-note"><span class="live-dot" aria-hidden="true"></span>Now live in Kigali · Cash or MoMo</p>
+      <p class="hero-note"><span class="live-dot" aria-hidden="true"></span>Live in Kigali · Agreed-price model accepted by RURA</p>
     </div>
 
     <div class="hero-phones" aria-hidden="true">
@@ -492,7 +549,7 @@ footer .store b{font-size:.92rem}
   <div class="wrap">
     <div class="how-head center">
       <h2>In-person bargaining, upgraded.</h2>
-      <p class="sub">Four simple steps. Try them on the phone.</p>
+      <p class="sub">Five simple steps. Try them on the phone.</p>
     </div>
     <div class="how-grid">
       <ol class="steps" id="steps">
@@ -500,6 +557,7 @@ footer .store b{font-size:.92rem}
         <li data-step="2"><span class="n">2</span><div><h3>Get offers</h3><p>Motari nearby accept or counter.</p></div></li>
         <li data-step="3"><span class="n">3</span><div><h3>Pick your motari</h3><p>See name, photo and rating first.</p></div></li>
         <li data-step="4"><span class="n">4</span><div><h3>Ride and pay</h3><p>They come to you. Pay cash or MoMo, exactly what you agreed.</p></div></li>
+        <li data-step="5"><span class="n">5</span><div><h3>Build a record</h3><p>Every trip adds to your motari's verified record.</p></div></li>
       </ol>
 
       <div class="demo">
@@ -522,6 +580,7 @@ footer .store b{font-size:.92rem}
 <section id="safety" class="safety">
   <div class="wrap">
     <h2>Safe from pickup to drop-off.</h2>
+    <p class="sf-sub">A price agreed upfront means no rush for the next fare.</p>
     <ul class="sf-row">
       <li><span class="sf-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg></span><span>Verified motari</span></li>
       <li><span class="sf-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg></span><span>Know who's coming</span></li>
@@ -531,30 +590,29 @@ footer .store b{font-size:.92rem}
   </div>
 </section>
 
-<!-- MISSION: why we exist, written for motari, passengers and funders alike -->
+<!-- MISSION: the intersection. A passenger's fair ride becomes a motari's verified record. -->
 <section id="mission" class="mission">
-  <div class="wrap m-grid">
-    <div class="m-copy">
-      <h2>Ridons leaves <em>no one behind.</em></h2>
-      <p>Motari keep Kigali moving, yet their payments rarely add up to anything a bank can use. Ridons turns every trip into a clear, organised earnings profile, the first step to savings, insurance and credit.</p>
-      <p class="m-ask">Fair prices today. Financial inclusion tomorrow. Built in Kigali, for Rwanda.</p>
-      <a class="btn btn-red m-btn" href="#partner">Partner with Ridons</a>
-    </div>
-
-    <div class="m-visual" role="img" aria-label="A motari's Ridons record: fair rides and an earnings profile are live, savings and protection are being built, access to credit is next.">
-      <span class="orb" aria-hidden="true"></span>
-      <span class="orb small" aria-hidden="true"></span>
-      <div class="record glass" aria-hidden="true">
-        <div class="rec-head"><span class="av">EN</span><div><b>Eric's Ridons record</b><small>Growing with every ride</small></div></div>
-        <div class="bars"><i style="height:22%"></i><i style="height:30%"></i><i style="height:26%"></i><i style="height:40%"></i><i style="height:48%"></i><i style="height:44%"></i><i style="height:60%"></i><i style="height:72%"></i><i style="height:86%"></i></div>
-        <ul class="unlocks">
-          <li class="on"><span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg></span>Fair rides<em>Live</em></li>
-          <li class="on"><span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg></span>Earnings profile<em>Live</em></li>
-          <li class="half"><span class="dot"></span>Savings &amp; protection<em>Building</em></li>
-          <li><span class="dot"></span>Access to credit<em>Next</em></li>
-        </ul>
+  <div class="wrap">
+    <div class="m-top">
+      <div class="m-copy">
+        <h2>Every trip builds a record.<br><em>Every record opens a door.</em></h2>
+        <p>Motari move Kigali, yet their work leaves no record, so lenders, insurers and pension schemes can't see them. They're not unreliable, just unverified. Ridons turns every trip into a verified record the motari owns.</p>
+        <p class="m-ask">Ridons leaves no one behind.</p>
+        <a class="btn btn-red m-btn" href="#partners">Partner with Ridons</a>
       </div>
+      <ul class="m-stats" aria-label="Rwanda at a glance">
+        <li><b>300,000</b><span>people work in Rwanda's transport sector</span></li>
+        <li><b>81.3%</b><span>of all workers are informal</span></li>
+        <li><b>22%</b><span>of adults are banked</span></li>
+        <li class="m-src">Sources: NISR Labour Force Survey 2024 and 2025; NISR FinScope 2024.</li>
+      </ul>
     </div>
+    <div class="doors" role="group" aria-label="One record, many doors">
+      <ul class="d-col"><li><span class="d-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></svg></span><div><b>Passengers</b><span>More trips, less waiting</span></div></li><li><span class="d-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 10 12 4l9 6M5 10v8M9.5 10v8M14.5 10v8M19 10v8M3 20h18"/></svg></span><div><b>Banks &amp; SACCOs</b><span>Loans on real earnings</span></div></li><li><span class="d-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><div><b>Ejo Heza &amp; RSSB</b><span>Pension and life cover</span></div></li></ul>
+      <div class="d-hub"><span class="d-ring" aria-hidden="true"></span><div class="d-core"><b>Motari's verified record</b><span>owned by the motari</span></div></div>
+      <ul class="d-col"><li><span class="d-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg></span><div><b>Insurers</b><span>Cover when work stops</span></div></li><li><span class="d-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></span><div><b>E-mobility finance</b><span>Own an electric moto</span></div></li><li><span class="d-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.8-3.8a6 6 0 0 1-7.9 7.9l-6.9 6.9a2.1 2.1 0 0 1-3-3l6.9-6.9a6 6 0 0 1 7.9-7.9z"/></svg></span><div><b>Service providers</b><span>Fuel, charging, parts</span></div></li></ul>
+    </div>
+    <p class="consent"><b>Consent first:</b> the motari decides who sees the record. Ridons never sells individual data.</p>
   </div>
 </section>
 
@@ -562,28 +620,7 @@ footer .store b{font-size:.92rem}
 <section id="drive" class="navy">
   <div class="wrap earn">
     <div class="c-visual">
-      <div class="phone" aria-hidden="true">
-        <div class="screen">
-          <div class="status"><span>9:41</span><span>●●●</span></div>
-          <div style="padding:8px 12px 0;display:flex;flex-direction:column;gap:9px;flex:1;min-height:0">
-            <div class="prof"><span class="av">EN</span><div><b>Eric Nshimiyimana</b><small>RAD 123 B · ★ 4.8</small></div></div>
-            <div class="earn-card">
-              <div class="r1"><span>RWF earned today</span><span style="display:flex;align-items:center;gap:5px">Online <i class="toggle"></i></span></div>
-              <div class="big num">24,840</div>
-              <div class="r2"><span>Rating<b>4.8</b></span><span>Trips<b>312</b></span><span>Level<b>Pro</b></span></div>
-            </div>
-            <h4 style="margin:2px 0 0;font-size:12px">Available offers</h4>
-            <div class="ride-card">
-              <div class="prof"><span class="av" style="background:#7C5CBF">AU</span><div style="flex:1"><b>Amina Umurerwa</b><small>★ 4.9 · 600 m away</small></div><span style="color:var(--red);font-weight:700;font-size:10px">1:00</span></div>
-              <div class="hint"><b style="color:var(--red)">Nyarutarama</b> → Remera Bus Park</div>
-              <div class="two"><span>Passenger offer<b>1,900 RWF</b></span><span style="text-align:right">Usual price<b>2,000 RWF</b></span></div>
-              <div class="fare"><button tabindex="-1">−</button><output class="num">1,900<small>RWF</small></output><button tabindex="-1">+</button></div>
-              <div class="btn2"><span class="p-btn ghost">Counter</span><span class="p-btn">Accept</span></div>
-            </div>
-            <div class="tabbar four"><span class="on"><svg><use href="#i-home"/></svg>Home</span><span><svg><use href="#i-earn"/></svg>Earnings</span><span><svg><use href="#i-act"/></svg>Activities</span><span><svg><use href="#i-acc"/></svg>Account</span></div>
-          </div>
-        </div>
-      </div>
+      <figure class="c-photo"><img src="motari.jpg" width="1100" height="1491" alt="A smiling Ridons motari in a red Ridons helmet and vest, on his motorbike in Kigali." loading="lazy" decoding="async"></figure>
     </div>
 
     <div class="c-copy">
@@ -594,7 +631,7 @@ footer .store b{font-size:.92rem}
       <ol class="c-flow">
         <li><span class="c-n">1</span><b>Set your price</b><span>Accept, counter or skip.</span></li>
         <li><span class="c-n">2</span><b>Get paid</b><span>Cash or MoMo, straight away.</span></li>
-        <li><span class="c-n">3</span><b>Grow</b><span>Every trip builds your profile.</span></li>
+        <li><span class="c-n">3</span><b>Grow</b><span>Savings, cover and credit, built on your record.</span></li>
       </ol>
       <div class="c-cta"><a class="btn btn-white" href="#join">Earn with Ridons</a></div>
     </div>
@@ -621,6 +658,22 @@ footer .store b{font-size:.92rem}
   </div>
 </section>
 
+<!-- PARTNERS -->
+<section id="partners" class="partners">
+  <div class="wrap">
+    <div class="p-head">
+      <h2>Others sell rides.<br><em>We build records.</em></h2>
+      <p class="sub">Partner with us to make every worker visible. Motari first. Every wheel next.</p>
+    </div>
+    <ol class="phases" aria-label="The plan, phase by phase"><li class="now"><small>Now</small><b>Kigali pilot</b><span>Prove the trip record with motari</span></li><li><small>Phase 2</small><b>Financial partners</b><span>Savings, money lessons, cover, credit</span></li><li><small>Phase 3</small><b>National rollout</b><span>All moto-taxis in Rwanda</span></li><li><small>Phase 4</small><b>Every wheel</b><span>Fleets, truckers, bus crews, delivery</span></li><li><small>Phase 5</small><b>The region</b><span>East African markets</span></li></ol>
+    <ul class="asks"><li><span class="a-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"/></svg></span><div><b>Funders</b><span>Help complete the pilot, partner links, USSD access and impact measurement.</span></div></li><li><span class="a-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 10 12 4l9 6M5 10v8M9.5 10v8M14.5 10v8M19 10v8M3 20h18"/></svg></span><div><b>Banks, SACCOs &amp; insurers</b><span>Design savings, credit and cover on verified records.</span></div></li><li><span class="a-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><div><b>Ejo Heza &amp; RSSB</b><span>Pension and cover contributions saved from every trip.</span></div></li><li><span class="a-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></span><div><b>E-mobility &amp; fleets</b><span>E-moto finance, rebates and first fleet pilots.</span></div></li></ul>
+    <div class="p-foot">
+      <p>We earn when motari earn: a small commission on completed rides only. Partner products are never charged to workers.</p>
+      <a class="btn btn-red" href="mailto:contact@ridons.com?subject=Partnering%20with%20Ridons">Work with us</a>
+    </div>
+  </div>
+</section>
+
 <!-- FAQ -->
 <section id="faq" style="padding-bottom:clamp(40px,6vw,64px)">
   <div class="wrap faq-wrap">
@@ -631,9 +684,10 @@ footer .store b{font-size:.92rem}
       <details><summary>Do I have to bargain every time?</summary><div class="a">No. Tap Confirm to use the suggested price.</div></details>
       <details><summary>Can I pay with cash?</summary><div class="a">Yes. Cash or MTN MoMo. You pay what you agreed.</div></details>
       <details><summary>Where does Ridons work?</summary><div class="a">Live in Kigali: Kimihurura, Remera and Nyarutarama, with more areas coming.</div></details>
-      <details><summary>Is it faster than walking to the stage?</summary><div class="a">Often. Your motari comes to you.</div></details>
+      <details><summary>Who owns the trip record?</summary><div class="a">The motari. They decide who sees it, and Ridons never sells individual data.</div></details>
       <details><summary>How much does the motari keep?</summary><div class="a">Most of it. Ridons takes a small fee on finished trips.</div></details>
       <details class="extra" hidden><summary>What if the motari asks for more?</summary><div class="a">Don't pay it. The agreed price is final. Report it in the app.</div></details>
+      <details class="extra" hidden><summary>Is it faster than walking to the stage?</summary><div class="a">Often. Your motari comes to you.</div></details>
       <details class="extra" hidden><summary>Can I choose my motari?</summary><div class="a">Yes. You see every offer and pick one.</div></details>
       <details class="extra" hidden><summary>I'm a motari. Can I skip a trip?</summary><div class="a">Anytime. Accept, counter or skip.</div></details>
       <details class="extra" hidden><summary>I left something behind.</summary><div class="a">Tell us in the app or email us. We'll contact your motari.</div></details>
@@ -648,10 +702,10 @@ footer .store b{font-size:.92rem}
 <footer>
   <div class="glow" aria-hidden="true"><span class="blob" style="width:340px;height:340px;background:#FF7A5C;top:-60px;left:12%;opacity:.5"></span><span class="blob" style="width:300px;height:300px;background:#6A0814;top:20px;right:8%;opacity:.5"></span></div>
   <div class="wrap">
-    <div class="partner glass-red" id="partner">
+    <div class="partner glass-red">
       <div>
-        <h3>Let's move Kigali forward, together.</h3>
-        <p>Talk to the Ridons team.</p>
+        <h3>Motari first. Every wheel next.</h3>
+        <p>Let's move Rwanda forward, together.</p>
       </div>
       <div class="partner-cta">
         <a class="btn" href="mailto:contact@ridons.com?subject=Working%20with%20Ridons">Work with us</a>
@@ -795,6 +849,7 @@ function stepOffers(){
 
 function stepDone(r, amt){
   setStep(4);
+  clearTimeout(window.__recT); window.__recT = setTimeout(() => { if (sheet.querySelector('.done')) setStep(5); }, 1600);
   sheet.innerHTML = `
     <div class="done">
       <span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg></span>
