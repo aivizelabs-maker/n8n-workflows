@@ -410,26 +410,6 @@ footer .store b{font-size:.92rem}
 .p-kick{margin:0;font-size:.8rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--red)}
 .p-head h2{max-width:24ch;margin:0}
 .p-head .sub{max-width:62ch;margin:0}
-.p-path{list-style:none;padding:0;margin:0 0 clamp(40px,6vw,56px);display:grid;grid-template-columns:repeat(4,1fr);gap:28px;counter-reset:pp}
-.p-path li{position:relative;display:grid;gap:4px;align-content:start;padding:18px;border-radius:18px;background:var(--red-soft)}
-.p-path li:not(:last-child)::after{content:"→";position:absolute;right:-21px;top:50%;transform:translateY(-50%);color:var(--red);font-weight:800}
-.p-path small{font-size:.72rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#B0161F}
-.p-path b{font-size:1.05rem}
-.p-path span{color:#4B5563;font-size:.92rem}
-.p-path li.out{background:var(--red);color:#fff}
-.p-path li.out small,.p-path li.out span{color:#FFF4F4}
-.p-next{margin:0 0 14px;font-size:.8rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);text-align:center}
-@media (max-width:900px){.p-path{grid-template-columns:1fr 1fr}.p-path li:nth-child(2)::after{content:none}}
-@media (max-width:520px){.p-path{grid-template-columns:1fr;gap:26px}.p-path li:not(:last-child)::after{content:"↓";right:auto;left:50%;top:auto;bottom:-23px;transform:translateX(-50%)}.p-path li:nth-child(2)::after{content:"↓"}}
-.phases{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
-.phases li{border:1px solid var(--line);border-radius:16px;padding:16px;display:grid;gap:4px;align-content:start}
-.phases small{font-size:.72rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--red)}
-.phases b{font-size:1.05rem}
-.phases span{color:var(--muted);font-size:.9rem}
-.phases li.now{background:var(--red);border-color:var(--red);color:#fff}
-.phases li.now small,.phases li.now span{color:#FFF4F4}
-@media (max-width:900px){.phases{grid-template-columns:1fr 1fr}}
-@media (max-width:520px){.phases{grid-template-columns:1fr}}
 .asks{list-style:none;padding:0;margin:clamp(24px,4vw,36px) 0 0;display:grid;grid-template-columns:1fr 1fr;gap:14px}
 @media (max-width:700px){.asks{grid-template-columns:1fr}}
 .asks li{display:flex;gap:14px;align-items:flex-start;background:var(--red-soft);border-radius:16px;padding:18px}
@@ -437,6 +417,17 @@ footer .store b{font-size:.92rem}
 .a-ic svg{width:22px;height:22px}
 .asks b{display:block;font-size:1.05rem}
 .asks span{color:var(--muted);font-size:.95rem}
+.outcomes small{display:block;font-size:.72rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#B0161F;margin-bottom:2px}
+.outcomes span{color:#4B5563}
+.p-consent{margin:18px 0 0;text-align:center;color:#4B5563}
+.p-consent b{color:var(--red)}
+.p-road{list-style:none;padding:0;margin:clamp(28px,4vw,40px) 0 0;display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.p-road li{padding:14px 16px;font-weight:700;display:grid;gap:2px;align-content:start}
+.p-road li+li{border-left:1px solid var(--line)}
+.p-road small{font-size:.72rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--red)}
+.p-road li.now{background:var(--red);color:#fff}
+.p-road li.now small{color:#FFF4F4}
+@media (max-width:700px){.p-road{grid-template-columns:1fr 1fr}.p-road li:nth-child(3){border-left:0}.p-road li:nth-child(n+3){border-top:1px solid var(--line)}}
 .p-foot{margin-top:28px;padding-top:24px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:16px 24px;align-items:center;justify-content:space-between}
 .p-foot p{color:var(--muted);max-width:62ch}
 .m-top .m-copy h2{font-size:clamp(2rem,3.6vw,3rem);line-height:1.08}
@@ -681,15 +672,9 @@ footer .store b{font-size:.92rem}
       <h2>Turning everyday transport work into <em>verified economic opportunity.</em></h2>
       <p class="sub">Ridons turns everyday transport work into a verified, worker-controlled record that, with the worker's consent, connects transport workers to savings, protection, responsible finance and productive assets. We start with moto-taxi workers in Kigali.</p>
     </div>
-    <ol class="p-path" aria-label="How a trip becomes opportunity">
-      <li><small>Work</small><b>Every trip counts</b><span>Each completed ride is logged in the app.</span></li>
-      <li><small>Record</small><b>Verified and portable</b><span>Owned by the worker, not by Ridons.</span></li>
-      <li><small>Consent</small><b>The worker decides</b><span>Shared only with partners they choose.</span></li>
-      <li class="out"><small>Opportunity</small><b>Doors open</b><span>Savings, protection, responsible finance and productive assets.</span></li>
-    </ol>
-    <p class="p-next">The road ahead, phase by phase</p>
-    <ol class="phases" aria-label="The plan, phase by phase"><li class="now"><small>Now</small><b>Kigali pilot</b><span>Prove the verified trip record</span></li><li><small>Phase 2</small><b>Financial partners</b><span>Savings, money lessons, cover, credit</span></li><li><small>Phase 3</small><b>National rollout</b><span>All moto-taxis in Rwanda</span></li><li><small>Phase 4</small><b>Every wheel</b><span>Fleets, truckers, bus crews, delivery</span></li><li><small>Phase 5</small><b>The region</b><span>East African markets</span></li></ol>
-    <ul class="asks"><li><span class="a-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"/></svg></span><div><b>Funders</b><span>Help complete the pilot, partner links, USSD access and impact measurement.</span></div></li><li><span class="a-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 10 12 4l9 6M5 10v8M9.5 10v8M14.5 10v8M19 10v8M3 20h18"/></svg></span><div><b>Banks, SACCOs &amp; insurers</b><span>Design savings, credit and cover on verified records.</span></div></li><li><span class="a-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><div><b>Ejo Heza &amp; RSSB</b><span>Pension and cover contributions saved from every trip.</span></div></li><li><span class="a-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></span><div><b>E-mobility &amp; fleets</b><span>E-moto finance, rebates and first fleet pilots.</span></div></li></ul>
+    <ul class="asks outcomes" aria-label="What the record connects workers to"><li><span class="a-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><div><small>Savings</small><b>Small, regular savings from every trip.</b><span>Ejo Heza, SACCOs and pension schemes</span></div></li><li><span class="a-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3 5 6v6c0 4.2 3 7.6 7 9 4-1.4 7-4.8 7-9V6z"/><path d="m9 12 2 2 4-4"/></svg></span><div><small>Protection</small><b>Cover for accidents, illness and the bike.</b><span>Insurers and RSSB</span></div></li><li><span class="a-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 10 12 4l9 6M5 10v8M9.5 10v8M14.5 10v8M19 10v8M3 20h18"/></svg></span><div><small>Responsible finance</small><b>Credit priced on verified earnings, not guesswork.</b><span>Banks, SACCOs and microfinance</span></div></li><li><span class="a-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></span><div><small>Productive assets</small><b>A path to owning the bike, including electric.</b><span>E-mobility and fleet finance</span></div></li></ul>
+    <p class="p-consent"><b>Worker-controlled.</b> Nothing is shared without the worker's consent.</p>
+    <ol class="p-road" aria-label="Where we go next"><li class="now"><small>Now</small>Moto-taxis, Kigali</li><li><small>Next</small>All of Rwanda</li><li><small>Then</small>Every wheel</li><li><small>Later</small>East Africa</li></ol>
     <div class="p-foot">
       <p>We earn only when trips are completed: a small commission per ride. Partner products are never charged to workers.</p>
       <a class="btn btn-red" href="mailto:contact@ridons.com?subject=Partnering%20with%20Ridons">Work with us</a>
